@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  # donor routes
+
+	resources :projects do
+		resources :events, only: [:show, :update]
+	end
+
   resources :donor, except: [:index]
 
 end
