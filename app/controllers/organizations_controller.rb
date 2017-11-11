@@ -7,7 +7,8 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    render json: @organization
+    @organization_projects = @organization.projects
+    render json: {organization: @organization, projects: @projects, category: @organization.category}
   end
 
   def new
@@ -20,8 +21,7 @@ class OrganizationsController < ApplicationController
     if @organization.save
       render json: @organization
     else
-      status 406
-      render json: {error: 'The account was not successfully created.'}
+      render json: {error: 'The account was not successfully created.'}, status 406
     end
   end
 
@@ -36,8 +36,7 @@ class OrganizationsController < ApplicationController
     if @organization.update(organization_params)
       render json: @organization
     else
-      status 406
-      render json: {error: @organizations.errors.full_messages}
+      render json: {error: @organizations.errors.full_messages}, status 406
     end
   end
 
