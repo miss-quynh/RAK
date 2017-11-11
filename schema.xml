@@ -45,7 +45,7 @@
 <row name="email" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="address" null="1" autoincrement="0">
+<row name="street_address" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="city" null="1" autoincrement="0">
@@ -70,11 +70,20 @@
 <part>id</part>
 </key>
 </table>
-<table x="335" y="209" name="organizations">
+<table x="339" y="154" name="organizations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
+<row name="organization_name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="organization_logo" null="1" autoincrement="0">
+<datatype>BLOB</datatype>
+<default>NULL</default></row>
+<row name="tax_code" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="URL" null="1" autoincrement="0">
@@ -100,15 +109,18 @@
 <part>id</part>
 </key>
 </table>
-<table x="689" y="188" name="donations">
+<table x="698" y="131" name="donations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="item_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="items_to_donate" row="id" />
+<default>NULL</default><relation table="items" row="id" />
 </row>
-<row name="quantity" null="1" autoincrement="0">
+<row name="quantity_requested" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="quantity_received" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="project_id" null="1" autoincrement="0">
@@ -125,16 +137,20 @@
 <part>id</part>
 </key>
 </table>
-<table x="855" y="266" name="items_to_donate">
+<table x="878" y="210" name="items">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="item" null="1" autoincrement="0">
+<row name="item_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="image" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<datatype>BLOB</datatype>
 <default>NULL</default></row>
+<row name="donation_type_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="donation_types" row="id" />
+</row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>DATETIME</datatype>
 <default>NULL</default></row>
@@ -145,7 +161,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="168" y="206" name="followings">
+<table x="168" y="186" name="followings">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -167,12 +183,24 @@
 <part>id</part>
 </key>
 </table>
-<table x="535" y="223" name="projects">
+<table x="533" y="87" name="projects">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="address" null="1" autoincrement="0">
+<row name="project_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="street_address" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="city" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="state" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="zip_code" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="description" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
@@ -195,11 +223,11 @@
 <part>id</part>
 </key>
 </table>
-<table x="537" y="443" name="categories">
+<table x="537" y="420" name="categories">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
+<row name="category_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
@@ -212,11 +240,28 @@
 <part>id</part>
 </key>
 </table>
-<table x="755" y="433" name="events">
+<table x="717" y="362" name="events">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
+<row name="event_name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="created_at" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="updated_at" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="869" y="433" name="donation_types">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="type_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
