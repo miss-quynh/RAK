@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :city, null: false
       t.string :state, null: false
       t.integer :zip_code, null: false
-      t.string :password_digest
+      t.text :description, null: false
       t.references :organization
       t.references :event
       t.timestamps

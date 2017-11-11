@@ -8,5 +8,4 @@ class Project < ApplicationRecord
 
   validates :project_name, :description, :zip_code, presence: true
 
-
 end
