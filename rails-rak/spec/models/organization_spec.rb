@@ -32,60 +32,65 @@ describe Organization do
       expect(organization.category).to eq category
     end
 
-    # it "has many donors" do
-    #   expect(organization.donor).to match_array [donor]
-    # end
-
     it { should have_many(:donors).through(:followings)}
 
     it { should have_many(:donations).through(:projects)}
 
-    # it "has many donations" do
-    #   expect(organization.donations).to match_array [donations]
-    # end
-
     it { should have_many(:events).through(:projects)}
-
-    # it "has many events" do
-    #   expect(organization.event).to match_array [events]
-    # end
 
     it { should have_many(:items).through(:donations)}
 
     it { should have_many(:donation_types).through(:items)}
-
-    # it "has many items" do
-    #   expect(organization.items).to match_array [item]
-    # end
-
-    # it { should have_many(:donation_types).through(:items)}
-
     end
 
-  # describe "validations" do
-  #   it "is valid when an organization has a name" do
-  #     organization.organization_name = "Red Cross"
-  #     organization.valid?
-  #     expect(organization.errors[:organization]).to be_empty
-  #   end
+  describe "validations" do
+    it "is valid when an organization has a name" do
+      organization.organization_name = "Red Cross"
+      organization.valid?
+      expect(organization.errors[:organization_name]).to be_empty
+    end
 
-  #   it "is valid when an organization has a tax code number" do
-  #     organization.tax_code = "14569"
-  #     organization.valid?
-  #     expect(organization.errors[:organization]).to be_empty
-  #   end
+    it "is invalid when an organization does not have a name" do
+      organization.organization_name = nil
+      organization.valid?
+      expect(organization.errors[:organization_name]).not_to be_empty
+    end
 
-  #   it "is valid when an organization has an email address" do
-  #     organization.email = "redcross@help.com"
-  #     organization.valid?
-  #     expect(organization.errors[:organization]).to be_empty
-  #   end
+    it "is valid when an organization has a tax code number" do
+      organization.tax_code = "14569"
+      organization.valid?
+      expect(organization.errors[:tax_code]).to be_empty
+    end
 
-    # it "is valid when an organization has a category" do
-    #   organization.category = "Healthcare"
-    #   organization.valid?
-    #   expect(organization.errors[:organization]).to be_empty
-    # end
-  # end
+    it "is invalid when an organization does not have a tax code number" do
+      organization.tax_code = nil
+      organization.valid?
+      expect(organization.errors[:tax_code]).not_to be_empty
+    end
+
+    it "is valid when an organization has an email address" do
+      organization.email = "redcross@help.com"
+      organization.valid?
+      expect(organization.errors[:email]).to be_empty
+    end
+
+    it "is invalid when an organization does not have an email address" do
+      organization.email = nil
+      organization.valid?
+      expect(organization.errors[:email]).not_to be_empty
+    end
+
+    it "is valid when an organization has a category" do
+      organization.category = Category.new
+      organization.valid?
+      expect(organization.errors[:category]).to be_empty
+    end
+
+    it "is invalid when an organization does not have a category" do
+      organization.category = nil
+      organization.valid?
+      expect(organization.errors[:category]).not_to be_empty
+    end
+  end
 
 end
