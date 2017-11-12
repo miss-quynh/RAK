@@ -21,7 +21,7 @@ class OrganizationsController < ApplicationController
     if @organization.save
       render json: @organization
     else
-      render json: {error: 'The account was not successfully created.'}, status 406
+      render json: {status: "error", code: 406, message: 'The account was not successfully created.'}
     end
   end
 
@@ -36,7 +36,7 @@ class OrganizationsController < ApplicationController
     if @organization.update(organization_params)
       render json: @organization
     else
-      render json: {error: @organizations.errors.full_messages}, status 406
+      render json: {status: "error", code: 406, message: @organizations.errors.full_messages}
     end
   end
 
