@@ -8,8 +8,8 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-rails-rak/log/*
-rails-rak/tmp/*
+/log/*
+/tmp/*
 !/log/.keep
 !/tmp/.keep
 
@@ -34,3 +34,4 @@ rails-rak/tmp/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
