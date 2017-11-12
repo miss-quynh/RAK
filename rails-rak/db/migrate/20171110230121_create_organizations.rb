@@ -8,7 +8,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.1]
       t.text :mission_statement
       t.string :password_digest
       t.references :category, null: false
-      t.blob :organization_logo
+      t.string :organization_logo
       t.timestamps
     end
   end
