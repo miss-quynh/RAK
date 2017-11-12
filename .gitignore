@@ -8,8 +8,8 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+/rails-rak/log/*
+/rails-rak/tmp/*
 !/log/.keep
 !/tmp/.keep
 

@@ -11,9 +11,9 @@ class OrganizationsController < ApplicationController
     render json: {organization: @organization, projects: @projects, category: @organization.category}
   end
 
-  def new
-    @organization = Organization.new
-  end
+  # def new
+  #   @organization = Organization.new
+  # end
 
   def create
     @organization = Organization.new(organization_params)
@@ -21,7 +21,7 @@ class OrganizationsController < ApplicationController
     if @organization.save
       render json: @organization
     else
-      render json: {status: "error", code: 406, message: 'The account was not successfully created.'}
+      render json: {errors: 'The account was not successfully created.'}, status: 406
     end
   end
 
@@ -36,7 +36,7 @@ class OrganizationsController < ApplicationController
     if @organization.update(organization_params)
       render json: @organization
     else
-      render json: {status: "error", code: 406, message: @organizations.errors.full_messages}
+      render json: {errors: @organizations.errors.full_messages}, status: 406
     end
   end
 
