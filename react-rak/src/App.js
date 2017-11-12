@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+
+import './App.css';
+import Home from './components/Home'
+import User from './components/User'
+
+
+class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-        <header className="rak-header">
-          <h1 className="logo">RaK</h1>
-        </header>
-        <div className="main">
-          <p>
-            Hello!
-          </p>
+    return(
+      <Router>
+        <div>
+          <header>
+            <h1>RaK</h1>
+            <Link to="/">Home</Link>{' '}
+          </header>
+
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/user" component={User} />
+            <Route render={() => <h1>Page not found</h1>} />
+          </Switch>
         </div>
-      </div>
-    );
+      </Router>
+    )
   }
 }
 
