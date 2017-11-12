@@ -1,4 +1,6 @@
 class Organization < ApplicationRecord
+  has_secure_password
+
   has_many :followings
   has_many :projects
   belongs_to :category
@@ -8,7 +10,7 @@ class Organization < ApplicationRecord
   has_many :items, through: :donations
   has_many :donation_types, through: :items
 
-  validates :name, :tax_code, :email, :category, presence: true
-  validates :email, :name, uniqueness: true
+  validates :organization_name, :tax_code, :email, :category, presence: true
+  validates :email, :organization_name, uniqueness: true
 
 end

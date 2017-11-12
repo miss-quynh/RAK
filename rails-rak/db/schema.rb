@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20171112004119) do
     t.string "city", null: false
     t.string "state", null: false
     t.integer "zip_code", null: false
-    t.string "password_digest"
+    t.text "description", null: false
     t.bigint "organization_id"
     t.bigint "event_id"
     t.datetime "created_at", null: false
