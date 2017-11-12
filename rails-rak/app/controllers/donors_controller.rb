@@ -1,4 +1,4 @@
-class DonorController < ApplicationController
+class DonorsController < ApplicationController
 
   def create
     @donor = Donor.new(donor_params)
@@ -7,6 +7,7 @@ class DonorController < ApplicationController
     else
       @errors = @donor.errors.full_messages
       render json: {errors: @errors}, status: 406
+    end
   end
 
   def show
@@ -28,9 +29,7 @@ class DonorController < ApplicationController
   end
 
   private
-
   def donor_params
-     params.require(:donor).permit(:first_name, :last_name, :email :street_address, :city, :state, :zip_code, :password)
+    params.require(:donor).permit(:first_name, :last_name, :email, :street_address, :city, :state, :zip_code, :password)
   end
-
 end
