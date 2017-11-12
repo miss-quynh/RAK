@@ -1,6 +1,7 @@
 Donor.destroy_all
 Category.destroy_all
 Organization.destroy_all
+Event.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -10,7 +11,7 @@ Organization.destroy_all
 #   Character.create(name: 'Luke', movie: movies.first)
 
 20.times do
-  Donor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state_abbr, zip_code: Faker::Address.zip_code password: "password")
+  Donor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state_abbr, zip_code: Faker::Address.zip_code, password: "password")
 end
 
 categories = ['Health', 'Social', 'Environment', 'Education', 'Natural Distaster']
@@ -25,5 +26,5 @@ end
 10.times { Event.create( event_name: Faker::Demographic.demonym) }
 
 Organization.all.each do |organization|
-  Organization.projects << Project.new(project_name: Faker::Job.field, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state_abbr, zip_code: Faker::Address.zip_code, description: Faker::Lorem.paragraph, organization: organization, event: Event.all.sample)
+  organization.projects << Project.new(project_name: Faker::Job.field, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state_abbr, zip_code: Faker::Address.zip_code, description: Faker::Lorem.paragraph, organization: organization, event: Event.all.sample)
 end
