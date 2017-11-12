@@ -11,7 +11,7 @@ describe Organization do
                                             category_id: category.id) }
   let(:event) { Event.create!(event_name: "NorCal Fires") }
   let(:following) {Following.create!(donor_id: donor.id, organization_id: organization.id)}
-  let(:project) { Project.create!(project_name: "Northern California", street_address: "100 Main Street", city: "Napa", state: "CA", zip_code: 95448, description: "Fire", organization_id: organization.id, event_id: event_id) }
+  let(:project) { Project.create!(project_name: "Northern California", street_address: "100 Main Street", city: "Napa", state: "CA", zip_code: 95448, description: "Fire", organization_id: organization.id, event_id: event.id) }
   let(:category) { Category.create!(category_name: "Healthcare") }
   let(:donor) { Donor.create!(first_name: "Bob", last_name: "Smith", email: "bob@bob.com", street_address: "100 Market Street", city: "Napa", state: "CA", zip_code: 95548, password: "password") }
   let(:donations) { Donation.create!(item_id: item.id, project_id: project.id, quantity_requested: 100, quantity_received: 50) }
@@ -32,9 +32,11 @@ describe Organization do
       expect(organization.category).to eq category
     end
 
-    it "has many donors" do
-      expect(organization.donor).to match_array [donor]
-    end
+    # it "has many donors" do
+    #   expect(organization.donor).to match_array [donor]
+    # end
+
+    it { should have_many(:donors).through(:followings)}
 
     it { should have_many(:donations).through(:projects)}
 
@@ -42,13 +44,19 @@ describe Organization do
     #   expect(organization.donations).to match_array [donations]
     # end
 
-    it "has many events" do
-      expect(organization.event).to match_array [events]
-    end
+    it { should have_many(:events).through(:projects)}
 
-    it "has many items" do
-      expect(organization.items).to match_array [item]
-    end
+    # it "has many events" do
+    #   expect(organization.event).to match_array [events]
+    # end
+
+    it { should have_many(:items).through(:donations)}
+
+    it { should have_many(:donation_types).through(:items)}
+
+    # it "has many items" do
+    #   expect(organization.items).to match_array [item]
+    # end
 
     # it { should have_many(:donation_types).through(:items)}
 
