@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import Home from './components/Home'
-import User from './components/User'
+import Donor from './components/Donor'
 
 
 class App extends React.Component {
@@ -14,13 +13,13 @@ class App extends React.Component {
       <Router>
         <div>
           <header>
-            <h1>RaK</h1>
-            <Link to="/">Home</Link>{' '}
+
+            <Link to="/"><h1>RaK</h1></Link>{' '}
           </header>
 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/user" component={User} />
+            <Route exact path="/donor" component={Donor} />
             <Route render={() => <h1>Page not found</h1>} />
           </Switch>
         </div>
