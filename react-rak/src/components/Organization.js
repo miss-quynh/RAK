@@ -5,8 +5,10 @@ class Organization extends React.Component {
   constructor() {
     super();
     this.state = {
-
+      organizations = []
     }
+
+    this.loadOrgImage = this.loadOrgImage.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +19,16 @@ class Organization extends React.Component {
     .then(data => {
       this.setState({  })
     })
+  }
+
+  loadOrgImage() {
+
+  }
+
+  render() {
+    return (
+
+    );
   }
 }
 
