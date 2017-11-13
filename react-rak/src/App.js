@@ -14,7 +14,7 @@ class App extends React.Component {
       <Router>
         <div>
           <header>
-            <Link to="/"><h1>RaK</h1></Link>{' '}
+            <Link to="/"><h1>RaK</h1></Link>
           </header>
 
           <Switch>
