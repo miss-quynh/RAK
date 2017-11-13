@@ -8,9 +8,10 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
     @closest_organizations = @organization.closest_organizations(donor_zipcode)
-
     @organization_projects = @organization.projects
+    
     render json: {organization: @organization, closest_organizations: @closest_organizations, projects: @projects, category: @organization.category}
+
   end
 
   def new
