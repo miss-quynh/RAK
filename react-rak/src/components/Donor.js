@@ -13,16 +13,21 @@ class Donor extends React.Component {
     this.state = {
       projects: [],
       organizations: [],
-      filters: {},
-      view: "organizations"
-      }
+      view: "projects",
+      filters: {
+        categories: [],
+        zipcode: "",
+        events: [],
+        type: []
+      },
+    }
 
     this.projectsCall = this.projectsCall.bind(this)
     this.conditionalTabShow = this.conditionalTabShow.bind(this)
     this.handleProjectsClick = this.handleProjectsClick.bind(this)
     this.handleOrganizationsClick = this.handleOrganizationsClick.bind(this)
 
-    }
+  }
 
   projectsCall() {
     const that = this
