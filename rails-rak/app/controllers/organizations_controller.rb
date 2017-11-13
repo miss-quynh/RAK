@@ -11,21 +11,16 @@ class OrganizationsController < ApplicationController
     render json: {organization: @organization, projects: @projects, category: @organization.category}
   end
 
-  def new
-    @organization = Organization.new
-  end
-
-
   def create
-    if valid_json?(GuidestarSearchAdapter.verify_organization(organization_params[:ein]))
+    if GuidestarSearchAdapter.verify_organization(organization_params[:ein])
 
     @organization = Organization.new(organization_params)
     end 
-    
+
     if @organization.save
       render json: @organization
     else
-      render json: { error: 'The account was not successfully created, please enter a valid EIN.'}, status 406
+      render json: { error: 'The account was not successfully created.'}
     end
   end
 
