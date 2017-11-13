@@ -27,17 +27,17 @@ describe Donation do
   let(:donation_type) { Donation_type.create!(type_name: "Aquafina") }
 
   describe "associations" do
-    it "belongs to project" do
-      expect(donation.project).to eq project
-    end
+    # it "belongs to project" do
+    #   expect(donation.project).to eq project
+    # end
 
     it { should have_one(:organization)}
 
     it { should have_one(:event)}
 
-    it "belongs to item" do
-      expect(donation.item).to eq item
-    end
+    # it "belongs to item" do
+    #   expect(donation.item).to eq item
+    # end
 
     it { have_one(:donation_type) }
   end
