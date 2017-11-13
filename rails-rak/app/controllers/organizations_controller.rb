@@ -1,7 +1,5 @@
 class OrganizationsController < ApplicationController
 
-
-
   def index
     @organizations = Organization.all.order(:id)
     render json: @organizations
@@ -9,8 +7,10 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
+    @closest_organizations = @organization.closest_organizations
+
     @organization_projects = @organization.projects
-    render json: {organization: @organization, projects: @projects, category: @organization.category}
+    render json: {organization: @organization, closest_organizations: @closest_organization, projects: @projects, category: @organization.category}
   end
 
   def new
@@ -26,7 +26,7 @@ class OrganizationsController < ApplicationController
     if @organization.save
       render json: @organization
     else
-      render json: { error: 'The account was not successfully created.'}
+      render json: { error: 'The account was not successfully created. EIN invalid'}
     end
   end
 

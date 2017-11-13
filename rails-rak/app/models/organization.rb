@@ -13,4 +13,20 @@ class Organization < ApplicationRecord
   validates :organization_name, :tax_code, :email, :category, presence: true
   validates :email, :organization_name, uniqueness: true
 
+  def self.closest_organizations
+    organizations_in_radius = []
+
+    @organizations = Organization.all
+    @organization_zipcodes = ZipcodeReturner.closest_zipcodes(organization_params[:zip_code])
+
+    @organizations.each do |org|
+      @organization_zipcodes.each do |zip|
+        if org.zip_code == zip
+          organizations_in_radius << org
+        end
+      end 
+    end
+  end  
+
+
 end
