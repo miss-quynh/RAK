@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Filter from './Filter';
 import Project from './Project';
 import axios from 'axios';
+
 
 class Donor extends React.Component {
 
@@ -14,7 +16,13 @@ class Donor extends React.Component {
     }
 
   componentDidMount() {
-    axios.get().then( response => console.log(response)).catch(console.log("error"))
+    const that = this
+    axios.get('http://localhost:8181/projects').then( function(response) {
+      const projects = []
+      response.data.map( project => projects.push(project) )
+      that.setState({projects})
+    })
+    console.log(this.state)
   }
 
   render() {
