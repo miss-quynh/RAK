@@ -30,7 +30,6 @@ class Donor extends React.Component {
         <Filter />
         <div className="project-list-container">
           <ul>
-            {console.log(this.state)}
             { this.state["projects"].map((project) =>
               <li><Project projectInfo={project}/></li>
             )}

@@ -8,6 +8,7 @@ import ProjectDisp from './components/ProjectDisp'
 
 
 class App extends React.Component {
+
   render() {
     return(
       <Router>
@@ -19,7 +20,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/donor" component={Donor} />
-            <Route pattern="/projects/:id" component={ProjectDisp} />
+            <Route path="/projects/:id" component={ProjectDisp} />
             <Route render={() => <h1>Page not found</h1>} />
           </Switch>
         </div>

@@ -9,7 +9,9 @@ class ProjectsController < ApplicationController
 	#visible to signed all users
 	def show
 	  @project = Project.find(params[:id])
-	  render json: @project
+
+
+	  render json: {project: @project, donations: @project.project_donations }
 	end
 
 	#visible to signed-in organizations
