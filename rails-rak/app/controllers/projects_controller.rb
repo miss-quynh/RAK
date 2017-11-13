@@ -68,6 +68,9 @@ class ProjectsController < ApplicationController
 		render status: 200
 	end
 
+	def filter
+	end
+
 	private
 
 	def project_params
