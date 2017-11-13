@@ -10,7 +10,7 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
     @organization_projects = @organization.projects
-    render json: {organization: @organization, projects: @projects, category: @organization.category}
+    render json: {organization: @organization, projects: @organization_projects, category: @organization.category}
   end
 
   # def new
