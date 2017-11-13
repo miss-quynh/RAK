@@ -1,19 +1,28 @@
 require 'rails_helper'
 
 describe Project do
-  let(:project) { Project.new }
+
+  let(:project) { Project.create!(project_name: "CA Fires",
+                                  street_address: 300 Mission Street,
+                                  city: "Napa",
+                                  state: "California",
+                                  zip_code: 94552,
+                                  description: "Northern California Fires",
+                                  organization_id: organization.id,
+                                  event_id: event.id) }
+  let(:)
+
+  describe "associations" do
+
+  end
+
+
 
   describe "validations" do
-    it "is valid when an project has a name" do
-      project.project_name = "NorCal Fires"
-      project.valid?
-      expect(project.errors[:project]).to be_empty
-    end
+    it { should validate_presence_of(:project_name) }
 
-    it "is valid when an project has a zipcode" do
-      project.zip_code = "14569"
-      project.valid?
-      expect(project.errors[:project]).to be_empty
-    end
+    it { should validate_presence_of(:description) }
+
+    it { should validate_presence_of(:zip_code) }
   end
 end
