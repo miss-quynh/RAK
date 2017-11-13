@@ -8,4 +8,16 @@ class Project < ApplicationRecord
 
   validates :project_name, :description, :zip_code, presence: true
 
+  def project_donations
+    donations = []
+    self.donations.each do |donation|
+      hash = Hash.new()
+      hash[:item] = donation.item.item_name
+      hash[:quantity_requested] = donation.quantity_requested
+      hash[:quantity_received] = donation.quantity_received
+      donations << hash
+    end
+    donations
+  end
+
 end

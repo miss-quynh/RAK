@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Item do
+describe DonationType do
   let(:category) { Category.create!(category_name: "Healthcare") }
   let(:organization) { Organization.create!(
                         organization_name: "Red Cross",
@@ -31,21 +31,21 @@ describe Item do
                 zip_code: 94552,
                 password: "password")
               }
-  let(:donation_type) { DonationType.create!(type_name: "Aquafina") }
   let(:item) { Item.create!(item_name: "water bottles", image: "case of Aquafina", donation_type_id: donation_type.id) }
   let(:donation) { Donation.create!(item_id: item.id, project_id: project.id, quantity_requested: 100, quantity_received: 50) }
+  let(:donation_type) { DonationType.create!(type_name: "Aquafina") }
 
   describe "associations" do
-    it "has many donations" do
-      expect(item.donations).to match_array [donation]
+    it "has many items" do
+      expect(donation_type.items).to match_array [item]
     end
-    it { should belong_to(:donation_type) }
+
+    it { should have_many(:donations).through(:items)}
     it { should have_many(:projects).through(:donations)}
+
   end
 
   describe "validations" do
-    it { should validate_presence_of(:item_name) }
-    it { should validate_presence_of(:donation_type) }
+    it { should validate_presence_of(:type_name) }
   end
-
 end

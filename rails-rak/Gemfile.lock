@@ -62,6 +62,11 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
+    jwt (1.5.6)
+    knock (2.1.1)
+      bcrypt (~> 3.1)
+      jwt (~> 1.5)
+      rails (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -92,6 +97,7 @@ GEM
     pg (0.21.0)
     puma (3.10.0)
     rack (2.0.3)
+    rack-cors (1.0.2)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -170,10 +176,15 @@ DEPENDENCIES
   dotenv-rails
   faker (~> 1.8.4)
   httparty
+<<<<<<< HEAD
+=======
+  knock
+>>>>>>> ed64a8a4e17ab25782eca07247027b41c7e83056
   listen (>= 3.0.5, < 3.2)
   paperclip
   pg (~> 0.18)
   puma (~> 3.7)
+  rack-cors
   rails (~> 5.1.4)
   rspec-rails (~> 3.6)
   shoulda-matchers (~> 3.1)
