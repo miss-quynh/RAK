@@ -5117,3 +5117,766 @@
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:48:15.225316"], ["updated_at", "2017-11-13 00:48:15.225316"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 184], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$F9mbY2701gj8bk.WKPOQ6e0Yz3OdS9kPzCr9aQgkfFVHClp.afG/i"], ["category_id", 184], ["created_at", "2017-11-13 00:48:15.251839"], ["updated_at", "2017-11-13 00:48:15.251839"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:48:15.271788"], ["updated_at", "2017-11-13 00:48:15.271788"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 184], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 184], ["event_id", 52], ["created_at", "2017-11-13 00:48:15.290978"], ["updated_at", "2017-11-13 00:48:15.290978"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:48:15.296403"], ["updated_at", "2017-11-13 00:48:15.296403"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$OnVUJlZkW3KDYQIGBv2RjOlLQw7ypm/oN4POcvklQmmH03TW56k8y"], ["category_id", 185], ["created_at", "2017-11-13 00:48:15.301905"], ["updated_at", "2017-11-13 00:48:15.301905"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:48:15.304379"], ["updated_at", "2017-11-13 00:48:15.304379"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 185], ["event_id", 53], ["created_at", "2017-11-13 00:48:15.308307"], ["updated_at", "2017-11-13 00:48:15.308307"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:48:15.312090"], ["updated_at", "2017-11-13 00:48:15.312090"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$5bbPTLWZPB7W7OtlBAqJ1uLN.8K63FammEei07f.NI7187BHyH84S"], ["category_id", 186], ["created_at", "2017-11-13 00:48:15.317250"], ["updated_at", "2017-11-13 00:48:15.317250"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:48:15.319511"], ["updated_at", "2017-11-13 00:48:15.319511"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 186], ["event_id", 54], ["created_at", "2017-11-13 00:48:15.322942"], ["updated_at", "2017-11-13 00:48:15.322942"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:48:15.337078"], ["updated_at", "2017-11-13 00:48:15.337078"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$KnUCmcI5z789cmme5PazouUoFQp9jzdvrSrrG61m/ncQpl6w6RajW"], ["category_id", 187], ["created_at", "2017-11-13 00:48:15.343767"], ["updated_at", "2017-11-13 00:48:15.343767"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:48:15.346742"], ["updated_at", "2017-11-13 00:48:15.346742"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 187], ["event_id", 55], ["created_at", "2017-11-13 00:48:15.350349"], ["updated_at", "2017-11-13 00:48:15.350349"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:49:27.815707"], ["updated_at", "2017-11-13 00:49:27.815707"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$0wuHQF3HSri8hWrVyvxnkuzxAXXYBPo8hJmnRP9RLbF.oKVUdxSpS"], ["category_id", 188], ["created_at", "2017-11-13 00:49:27.842962"], ["updated_at", "2017-11-13 00:49:27.842962"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:49:27.862276"], ["updated_at", "2017-11-13 00:49:27.862276"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 188], ["event_id", 56], ["created_at", "2017-11-13 00:49:27.883533"], ["updated_at", "2017-11-13 00:49:27.883533"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:49:27.888543"], ["updated_at", "2017-11-13 00:49:27.888543"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$U7ohIQyiF8lADu/hvjfxVe7bnq1OO0k8vmkXknaxiAsG98AUJqphG"], ["category_id", 189], ["created_at", "2017-11-13 00:49:27.894148"], ["updated_at", "2017-11-13 00:49:27.894148"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:49:27.896558"], ["updated_at", "2017-11-13 00:49:27.896558"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 189], ["event_id", 57], ["created_at", "2017-11-13 00:49:27.900580"], ["updated_at", "2017-11-13 00:49:27.900580"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:49:27.904519"], ["updated_at", "2017-11-13 00:49:27.904519"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$AMwKYo4m2wmZqJi27vAf3uJj2eR64P4kLvaY2ffvEUrxIjAZI73YW"], ["category_id", 190], ["created_at", "2017-11-13 00:49:27.909787"], ["updated_at", "2017-11-13 00:49:27.909787"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:49:27.912182"], ["updated_at", "2017-11-13 00:49:27.912182"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 190], ["event_id", 58], ["created_at", "2017-11-13 00:49:27.916177"], ["updated_at", "2017-11-13 00:49:27.916177"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:49:27.930103"], ["updated_at", "2017-11-13 00:49:27.930103"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$tFcUxqTBECSNUygu0shM1.OB29cCfJCootnCMc2n7o22lz4407PfK"], ["category_id", 191], ["created_at", "2017-11-13 00:49:27.937590"], ["updated_at", "2017-11-13 00:49:27.937590"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:49:27.940382"], ["updated_at", "2017-11-13 00:49:27.940382"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 191], ["event_id", 59], ["created_at", "2017-11-13 00:49:27.943934"], ["updated_at", "2017-11-13 00:49:27.943934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:51:22.809858"], ["updated_at", "2017-11-13 00:51:22.809858"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$zuSbsl2tn8L/G5Tmsh6kGOKAk1DR8QcqwFTDSWo9oREhMzS9sp4b6"], ["category_id", 192], ["created_at", "2017-11-13 00:51:22.837441"], ["updated_at", "2017-11-13 00:51:22.837441"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:51:22.857735"], ["updated_at", "2017-11-13 00:51:22.857735"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 192], ["event_id", 60], ["created_at", "2017-11-13 00:51:22.876522"], ["updated_at", "2017-11-13 00:51:22.876522"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:51:22.881781"], ["updated_at", "2017-11-13 00:51:22.881781"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$2cwQelCTPqltCrjB2.4oguTt9wMn8TcIwhT0KcNGV2CXZDeN4cXh6"], ["category_id", 193], ["created_at", "2017-11-13 00:51:22.887218"], ["updated_at", "2017-11-13 00:51:22.887218"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:51:22.889674"], ["updated_at", "2017-11-13 00:51:22.889674"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 193], ["event_id", 61], ["created_at", "2017-11-13 00:51:22.893488"], ["updated_at", "2017-11-13 00:51:22.893488"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:51:22.897243"], ["updated_at", "2017-11-13 00:51:22.897243"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$p2LPLpa01bp0bUlEWh6IKuqiba.Dbtz0SY7EajcXSlyPHW6tUGmj2"], ["category_id", 194], ["created_at", "2017-11-13 00:51:22.902695"], ["updated_at", "2017-11-13 00:51:22.902695"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:51:22.905057"], ["updated_at", "2017-11-13 00:51:22.905057"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 194], ["event_id", 62], ["created_at", "2017-11-13 00:51:22.908413"], ["updated_at", "2017-11-13 00:51:22.908413"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:51:22.923248"], ["updated_at", "2017-11-13 00:51:22.923248"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$PpwVipqIDV4qebF92bPikuOPcYSemYelZnLYOsEYbwiM1Apx.we.K"], ["category_id", 195], ["created_at", "2017-11-13 00:51:22.928806"], ["updated_at", "2017-11-13 00:51:22.928806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:51:22.931578"], ["updated_at", "2017-11-13 00:51:22.931578"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 195], ["event_id", 63], ["created_at", "2017-11-13 00:51:22.935326"], ["updated_at", "2017-11-13 00:51:22.935326"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:52:12.001642"], ["updated_at", "2017-11-13 00:52:12.001642"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 196], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$Hl9DE/Fo/2ND5RoCQAb82Om/b.FheEY1zRypXt6IbWCRLanZqZBp2"], ["category_id", 196], ["created_at", "2017-11-13 00:52:12.027797"], ["updated_at", "2017-11-13 00:52:12.027797"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:52:12.047664"], ["updated_at", "2017-11-13 00:52:12.047664"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 196], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 196], ["event_id", 64], ["created_at", "2017-11-13 00:52:12.066903"], ["updated_at", "2017-11-13 00:52:12.066903"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:52:12.072309"], ["updated_at", "2017-11-13 00:52:12.072309"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$5Mx8yU4gEVurrS83BW9yPu/MqC/IxQd9d1ch/0KSzDoYac4TYag8y"], ["category_id", 197], ["created_at", "2017-11-13 00:52:12.077820"], ["updated_at", "2017-11-13 00:52:12.077820"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:52:12.080285"], ["updated_at", "2017-11-13 00:52:12.080285"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 197], ["event_id", 65], ["created_at", "2017-11-13 00:52:12.084279"], ["updated_at", "2017-11-13 00:52:12.084279"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:52:12.088198"], ["updated_at", "2017-11-13 00:52:12.088198"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 198], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$JpEl1lfdr5QCTlKuvK056.fgMJkrDPcIsDH.Q1d9anPYKyjusOLm6"], ["category_id", 198], ["created_at", "2017-11-13 00:52:12.094009"], ["updated_at", "2017-11-13 00:52:12.094009"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:52:12.096471"], ["updated_at", "2017-11-13 00:52:12.096471"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 198], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 198], ["event_id", 66], ["created_at", "2017-11-13 00:52:12.100053"], ["updated_at", "2017-11-13 00:52:12.100053"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 198], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:52:12.116967"], ["updated_at", "2017-11-13 00:52:12.116967"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$vHkQGS1bNr3mRWwHKI6pX.asFSppm4bd4ajZ8XSYgcMFRcOhYL.0m"], ["category_id", 199], ["created_at", "2017-11-13 00:52:12.122495"], ["updated_at", "2017-11-13 00:52:12.122495"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:52:12.124918"], ["updated_at", "2017-11-13 00:52:12.124918"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 199], ["event_id", 67], ["created_at", "2017-11-13 00:52:12.129154"], ["updated_at", "2017-11-13 00:52:12.129154"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:53:11.823868"], ["updated_at", "2017-11-13 00:53:11.823868"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$8wl3jTAuXUfWZ0dbam8Kqu/LurQVAfpR1..Okvrb0KfdsAuhmNAQG"], ["category_id", 200], ["created_at", "2017-11-13 00:53:11.850182"], ["updated_at", "2017-11-13 00:53:11.850182"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:53:11.872168"], ["updated_at", "2017-11-13 00:53:11.872168"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 200], ["event_id", 68], ["created_at", "2017-11-13 00:53:11.891057"], ["updated_at", "2017-11-13 00:53:11.891057"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:53:11.896267"], ["updated_at", "2017-11-13 00:53:11.896267"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$.ouZjPMcPUKkFskSxLcdh.MG92im02D7G615CCdHsguvbuKv4EZ4S"], ["category_id", 201], ["created_at", "2017-11-13 00:53:11.902488"], ["updated_at", "2017-11-13 00:53:11.902488"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:53:11.905037"], ["updated_at", "2017-11-13 00:53:11.905037"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 201], ["event_id", 69], ["created_at", "2017-11-13 00:53:11.908634"], ["updated_at", "2017-11-13 00:53:11.908634"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:53:11.912491"], ["updated_at", "2017-11-13 00:53:11.912491"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$ru7w.fClaal9m68vcu7Uxe15NQ/aGI/2hzG3Qmskb8kmty508O3NK"], ["category_id", 202], ["created_at", "2017-11-13 00:53:11.917748"], ["updated_at", "2017-11-13 00:53:11.917748"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:53:11.920051"], ["updated_at", "2017-11-13 00:53:11.920051"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 202], ["event_id", 70], ["created_at", "2017-11-13 00:53:11.923507"], ["updated_at", "2017-11-13 00:53:11.923507"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:53:11.938162"], ["updated_at", "2017-11-13 00:53:11.938162"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$ENBdZ0nIdRoisoXAC0XuwOf8EKKb13BB0YnIXf7MDwj/r6dazrNYS"], ["category_id", 203], ["created_at", "2017-11-13 00:53:11.944211"], ["updated_at", "2017-11-13 00:53:11.944211"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:53:11.946525"], ["updated_at", "2017-11-13 00:53:11.946525"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 203], ["event_id", 71], ["created_at", "2017-11-13 00:53:11.949926"], ["updated_at", "2017-11-13 00:53:11.949926"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDonationType Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Aquafina"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Aquafina"], ["created_at", "2017-11-13 00:53:11.971597"], ["updated_at", "2017-11-13 00:53:11.971597"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDonationType Load (0.2ms)[0m  [1m[34mSELECT  "donation_types".* FROM "donation_types" WHERE "donation_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "image", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_name", "water bottles"], ["image", "case of Aquafina"], ["donation_type_id", 1], ["created_at", "2017-11-13 00:53:11.983602"], ["updated_at", "2017-11-13 00:53:11.983602"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "quantity_received", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["item_id", 1], ["project_id", 71], ["quantity_requested", 100], ["quantity_received", 50], ["created_at", "2017-11-13 00:53:11.999405"], ["updated_at", "2017-11-13 00:53:11.999405"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 71]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:54:14.321218"], ["updated_at", "2017-11-13 00:54:14.321218"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 204], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$SBte33y14.hCggpeY4aY6.ez4zWWikIQg62bMt9XLIJZdZacK84Iq"], ["category_id", 204], ["created_at", "2017-11-13 00:54:14.347721"], ["updated_at", "2017-11-13 00:54:14.347721"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:54:14.367854"], ["updated_at", "2017-11-13 00:54:14.367854"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 204], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 204], ["event_id", 72], ["created_at", "2017-11-13 00:54:14.386713"], ["updated_at", "2017-11-13 00:54:14.386713"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:54:14.392362"], ["updated_at", "2017-11-13 00:54:14.392362"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$hwA8MRfQJMSe1.e7o7AxoORKXGxqolTD4eINTDQu9zLcLiUluSReq"], ["category_id", 205], ["created_at", "2017-11-13 00:54:14.398115"], ["updated_at", "2017-11-13 00:54:14.398115"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:54:14.400573"], ["updated_at", "2017-11-13 00:54:14.400573"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 205], ["event_id", 73], ["created_at", "2017-11-13 00:54:14.404222"], ["updated_at", "2017-11-13 00:54:14.404222"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:54:14.407935"], ["updated_at", "2017-11-13 00:54:14.407935"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$tFrEgmxSF4sNfGKuWukZY.fUFM.yEUvm78QaSJPsKJH04M8DQZ6ki"], ["category_id", 206], ["created_at", "2017-11-13 00:54:14.413474"], ["updated_at", "2017-11-13 00:54:14.413474"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:54:14.415918"], ["updated_at", "2017-11-13 00:54:14.415918"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 206], ["event_id", 74], ["created_at", "2017-11-13 00:54:14.419375"], ["updated_at", "2017-11-13 00:54:14.419375"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "organizations" ON "categories"."id" = "organizations"."category_id" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Healthcare"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Healthcare"], ["created_at", "2017-11-13 00:54:14.433585"], ["updated_at", "2017-11-13 00:54:14.433585"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 207], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rc@rc.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Red Cross"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Red Cross"], ["tax_code", 94124], ["email", "rc@rc.com"], ["url", "redcross.com"], ["mission_statement", "hello"], ["password_digest", "$2a$04$BZNR0Ii0FDKbB.7rh3vvCO1/vhUk/fqoxreHH7WCYHMGHRzjNSpym"], ["category_id", 207], ["created_at", "2017-11-13 00:54:14.439256"], ["updated_at", "2017-11-13 00:54:14.439256"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "NorCal Fires"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "NorCal Fires"], ["created_at", "2017-11-13 00:54:14.444127"], ["updated_at", "2017-11-13 00:54:14.444127"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 207], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "CA Fires"], ["street_address", "300 Mission Street"], ["city", "Napa"], ["state", "California"], ["zip_code", 94552], ["description", "Northern California Fires"], ["organization_id", 207], ["event_id", 75], ["created_at", "2017-11-13 00:54:14.447898"], ["updated_at", "2017-11-13 00:54:14.447898"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDonationType Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Aquafina"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Aquafina"], ["created_at", "2017-11-13 00:54:14.469414"], ["updated_at", "2017-11-13 00:54:14.469414"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDonationType Load (0.2ms)[0m  [1m[34mSELECT  "donation_types".* FROM "donation_types" WHERE "donation_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "image", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_name", "water bottles"], ["image", "case of Aquafina"], ["donation_type_id", 2], ["created_at", "2017-11-13 00:54:14.482327"], ["updated_at", "2017-11-13 00:54:14.482327"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "quantity_received", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["item_id", 2], ["project_id", 75], ["quantity_requested", 100], ["quantity_received", 50], ["created_at", "2017-11-13 00:54:14.497296"], ["updated_at", "2017-11-13 00:54:14.497296"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 75]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
