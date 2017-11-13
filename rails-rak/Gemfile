@@ -21,6 +21,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker', '~> 1.8.4'
 
+# Knock is an authentication solution for Rails API-only application based on JSON Web Tokens
+gem 'knock'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
