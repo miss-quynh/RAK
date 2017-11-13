@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class OrganizationLogin extends React.Component {
   constructor(props){
@@ -24,8 +25,21 @@ class OrganizationLogin extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.props.onSubmit(
-      this.state.email
+    var currentContext = this;
+    this.serverRequest = axios
+    .post("localhost:8181/organization_token", {
+      "auth": {
+        "email": this.state.email
+      }
+      // .then(function (response) {
+      //   console.log(response);
+      //   if (response.data.code == 201){
+      //     console.log("Success")
+      //   }
+      // })
+    }
+    // this.props.onSubmit(
+    //   this.state.email
     );
   }
   render() {

@@ -24,6 +24,7 @@ class App extends React.Component {
             <Route exact path="/organization/login" />
             <Route path="/organizations/:id" component={Organization} />
             <Route path="/projects/:id" component={ProjectDisp} />
+            <Route path="/organizations/login" component={OrganizationLogin} />
             <Route render={() => <h1>Page not found</h1>} />
           </Switch>
         </div>
