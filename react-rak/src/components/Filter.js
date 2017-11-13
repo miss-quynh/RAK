@@ -26,8 +26,8 @@ class Filter extends React.Component {
   }
 
   componentDidMount() {
-    // this.projectsCall();
-    // this.organizationsCall();
+`    // this.projectsCall();
+    // this.organizationsCall();`
   }
 
 
