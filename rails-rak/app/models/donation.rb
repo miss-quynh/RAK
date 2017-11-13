@@ -1,7 +1,7 @@
 class Donation < ApplicationRecord
   belongs_to :project
   has_one :organization, through: :project
-  belongs_to :event, through: :project
+  has_one :event, through: :project
   belongs_to :item
   has_one :donation_type, through: :item
 
