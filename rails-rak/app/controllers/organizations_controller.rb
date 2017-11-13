@@ -15,15 +15,20 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new
   end
 
-  def create
-    @organization = Organization.new(organization_params)
 
+  def create
+    if valid_json?(GuidestarSearchAdapter.verify_organization(organization_params[:ein]))
+
+    @organization = Organization.new(organization_params)
+    end 
+    
     if @organization.save
       render json: @organization
     else
-      render json: {status: "error", code: 406, message: 'The account was not successfully created.'}
+      render json: { error: 'The account was not successfully created, please enter a valid EIN.'}, status 406
     end
   end
+
 
   def edit
     @organization = Organization.find(params[:id])
@@ -45,5 +50,7 @@ class OrganizationsController < ApplicationController
   def organization_params
     params.require(:organization).permit(:organization_name, :tax_code, :email, :password, :password_confirmation)
   end
+
+  
 
 end
