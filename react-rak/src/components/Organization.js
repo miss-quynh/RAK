@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Project from './Project';
+import NewProjectForm from './NewProjectForm'
 
 class Organization extends React.Component {
 
@@ -10,13 +11,10 @@ class Organization extends React.Component {
       projects: [],
       name: '',
       mission_statement: '',
-      isToggleOn: true,
-      value: ''
+      displayNewProjectForm: false
     };
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleProjectFormState = this.toggleProjectFormState.bind(this);
   }
 
   componentDidMount() {
@@ -30,36 +28,13 @@ class Organization extends React.Component {
     })
   }
 
-  handleClick() {
+  toggleProjectFormState() {
     this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
+      displayNewProjectForm: !prevState.displayNewProjectForm
     }));
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A new project was created: ' + this.state.value);
-    event.preventDefault();
-  }
-
   render() {
-    if(this.state.isToggleOn){
-        <button onClick={this.handleClick}>
-          Add New Project
-        </button>
-      }else{
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Create" />
-        </form>
-      }
-
     return (
       <div className='Organization-show-container'>
         <h1>
@@ -70,6 +45,10 @@ class Organization extends React.Component {
           {this.state.mission_statement}
         </p>
 
+        <NewProjectForm
+          displayNewProjectForm={this.state.displayNewProjectForm}
+          toggleProjectFormState={this.toggleProjectFormState}
+        />
 
         <ul>
           {this.state.projects.map( project => <li><Link to={`/projects/${project.id}`}>{project.project_name}</Link></li>)
