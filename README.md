@@ -6,26 +6,25 @@ Random acts of Kindness (RAK) is a mobile-first web application where trusted or
 
 **Donors**
 
-- regular donor accounts are created via sign-up.
-- have account authentication
-- have a public list of projects
+- can create accounts.
+- have account authentication.
+- can follow organisations.
+- have a public list of projects.
 - can filter projects by radius, donation type, events, and categories.
-- donors can follow organisations.
 
 **Organizations**
 
-- verified organisations can create account and build a profile
+- verified organisations can create an account and build a profile.
 - profiles include branding elements, projects, and mission statement.
-- rganisations can create projects.
-- rganisations  can create events i.e. Napa Fire
-- rganisations can add/update/delete entries
-- each project has some reviews written only by trusted reviewers
-- rganization accounts are verified via their EIN using the Guidestar API
+- organizations can create projects.
+- organizations can create events i.e. Napa Fire.
+- organisations can add/update/delete entries.
+- organization accounts are verified via their EIN using the Guidestar API.
 
 **Stretch goals:**
 
-- Sign-in with Facebook/Google
-- Secure payment (Stripe, Square, Paypal)
+- Sign-in with Facebook/Google.
+- Secure payment (Stripe, Square, Paypal).
 
 **Contributors:**
 
