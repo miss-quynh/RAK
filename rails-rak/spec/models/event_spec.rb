@@ -42,7 +42,6 @@ describe Event do
 
     it { should have_many(:organizations).through(:projects)}
     it { should have_many(:donations).through(:projects)}
-    end
   end
 
   describe "validations" do
