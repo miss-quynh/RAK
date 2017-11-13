@@ -9,8 +9,7 @@ describe Donation do
                                   description: "Northern California Fires",
                                   organization_id: organization.id,
                                   event_id: event.id) }
-  let(:items) { Item.create!(item_name: "water bottles", image: "case of Aquafina", donation_type_id: donation_type.id) }
-
+  let(:item) { Item.create!(item_name: "water bottles", image: "case of Aquafina", donation_type_id: donation_type.id) }
   let(:donation) { Donation.create!(item_id: item.id, project_id: project.id, quantity_requested: 100, quantity_received: 50) }
   let(:category) { Category.create!(category_name: "Healthcare") }
   let(:organization) { Organization.create!(
@@ -22,9 +21,8 @@ describe Donation do
                         password: "password",
                         category_id: category.id)
                       }
-
+  let(:donation_type) { DonationType.create!(type_name: "Aquafina") }
   let(:event) { Event.create!(event_name: "NorCal Fires") }
-  let(:donation_type) { Donation_type.create!(type_name: "Aquafina") }
 
   describe "associations" do
     # it "belongs to project" do
