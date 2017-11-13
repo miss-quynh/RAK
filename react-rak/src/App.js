@@ -21,8 +21,8 @@ class App extends React.Component {
 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/donor" component={Donor} />
-            <Route exact path="/organization/login" />
+            <Route exact path="/donors" component={Donor} />
+            <Route exact path="/organizations/login" />
             <Route path="/organizations/:id" component={Organization} />
             <Route path="/projects/:id" component={ProjectDisp} />
             <Route path="/organizations/login" component={OrganizationLogin} />
