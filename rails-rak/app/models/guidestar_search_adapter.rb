@@ -16,7 +16,6 @@ class GuidestarSearchAdapter
 
   def self.verify_organization(ein) #verify using EIN
     response = self.get('', query: { q: "ein:#{ein}" }, basic_auth: @@auth )
-    p response
     return parse_data(response)
   end
 
