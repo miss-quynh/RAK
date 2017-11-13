@@ -1,5 +1,7 @@
 class OrganizationsController < ApplicationController
 
+
+
   def index
     @organizations = Organization.all.order(:id)
     render json: @organizations
@@ -9,6 +11,10 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     @organization_projects = @organization.projects
     render json: {organization: @organization, projects: @projects, category: @organization.category}
+  end
+
+  def new
+    @organization = Organization.new
   end
 
   def create
@@ -36,7 +42,7 @@ class OrganizationsController < ApplicationController
     if @organization.update(organization_params)
       render json: @organization
     else
-      render json: {status: "error", code: 406, message: @organizations.errors.full_messages}
+      render json: {errors: @organizations.errors.full_messages}, status: 406
     end
   end
 
@@ -45,7 +51,5 @@ class OrganizationsController < ApplicationController
   def organization_params
     params.require(:organization).permit(:organization_name, :tax_code, :email, :password, :password_confirmation)
   end
-
-  
 
 end
