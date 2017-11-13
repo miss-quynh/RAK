@@ -1,7 +1,5 @@
 class OrganizationsController < ApplicationController
 
-
-
   def index
     @organizations = Organization.all.order(:id)
     render json: @organizations
@@ -9,23 +7,29 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
+    @closest_organizations = @organization.closest_organizations(donor_zipcode)
     @organization_projects = @organization.projects
-    render json: {organization: @organization, projects: @organization_projects, category: @organization.category}
+    
+    render json: {organization: @organization, closest_organizations: @closest_organizations, projects: @projects, category: @organization.category}
+
   end
 
-  # def new
-  #   @organization = Organization.new
-  # end
+  def new
+    @organization = Organization.new
+  end
 
   def create
-    @organization = Organization.new(organization_params)
+    if GuidestarSearchAdapter.verify_organization(organization_params[:ein])
+      @organization = Organization.new(organization_params)
+    end 
 
     if @organization.save
       render json: @organization
     else
-      render json: {errors: 'The account was not successfully created.'}, status: 406
+      render json: { error: 'The account was not successfully created. EIN invalid'}
     end
   end
+
 
   def edit
     @organization = Organization.find(params[:id])
