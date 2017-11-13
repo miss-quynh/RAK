@@ -19,10 +19,9 @@ class Donor extends React.Component {
     const that = this
     axios.get('http://localhost:8181/projects').then( function(response) {
       const projects = []
-      response.data.map( project => projects.push(project) )
+      response.data.map( project => projects.push(project))
       that.setState({projects})
     })
-    console.log(this.state)
   }
 
   render() {
@@ -31,6 +30,7 @@ class Donor extends React.Component {
         <Filter />
         <div className="project-list-container">
           <ul>
+            {console.log(this.state)}
             { this.state["projects"].map((project) =>
               <li><Project projectInfo={project}/></li>
             )}
