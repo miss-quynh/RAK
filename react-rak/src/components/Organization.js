@@ -10,7 +10,13 @@ class Organization extends React.Component {
       projects: [],
       name: '',
       mission_statement: '',
-    }
+      isToggleOn: true,
+      value: ''
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -24,7 +30,36 @@ class Organization extends React.Component {
     })
   }
 
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A new project was created: ' + this.state.value);
+    event.preventDefault();
+  }
+
   render() {
+    if(this.state.isToggleOn){
+        <button onClick={this.handleClick}>
+          Add New Project
+        </button>
+      }else{
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Create" />
+        </form>
+      }
+
     return (
       <div className='Organization-show-container'>
         <h1>
@@ -34,6 +69,7 @@ class Organization extends React.Component {
         <p className="organization-mission-statement">
           {this.state.mission_statement}
         </p>
+
 
         <ul>
           {this.state.projects.map( project => <li><Link to={`/projects/${project.id}`}>{project.project_name}</Link></li>)
