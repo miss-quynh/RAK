@@ -2,13 +2,15 @@ require 'rails_helper'
 
 describe Organization do
 
-  let(:organization) { Organization.create!(organization_name: "Red Cross",
-                                            tax_code: 94124,
-                                            email: "rc@rc.com",
-                                            url: "redcross.com",
-                                            mission_statement: "hello",
-                                            password: "password",
-                                            category_id: category.id) }
+  let(:organization) { Organization.create!(
+                        organization_name: "Red Cross",
+                        tax_code: 94124,
+                        email: "rc@rc.com",
+                        url: "redcross.com",
+                        mission_statement: "hello",
+                        password: "password",
+                        category_id: category.id)
+                      }
   let(:event) { Event.create!(event_name: "NorCal Fires") }
   let(:following) {Following.create!(donor_id: donor.id, organization_id: organization.id)}
   let(:project) { Project.create!(project_name: "Northern California", street_address: "100 Main Street", city: "Napa", state: "CA", zip_code: 95448, description: "Fire", organization_id: organization.id, event_id: event.id) }
