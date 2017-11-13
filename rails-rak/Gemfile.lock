@@ -176,10 +176,7 @@ DEPENDENCIES
   dotenv-rails
   faker (~> 1.8.4)
   httparty
-<<<<<<< HEAD
-=======
   knock
->>>>>>> ed64a8a4e17ab25782eca07247027b41c7e83056
   listen (>= 3.0.5, < 3.2)
   paperclip
   pg (~> 0.18)
