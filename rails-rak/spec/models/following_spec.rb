@@ -36,10 +36,6 @@ describe Following do
   let(:donation) { Donation.create!(item_id: item.id, project_id: project.id, quantity_requested: 100, quantity_received: 50) }
 
   describe "associations" do
-    it "has many items" do
-      expect(donation_type.items).to match_array [item]
-    end
-
     it { should belong_to(:organization) }
     it { should belong_to(:donor) }
 

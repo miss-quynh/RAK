@@ -31,9 +31,9 @@ describe DonationType do
                 zip_code: 94552,
                 password: "password")
               }
-  let(:donation_type) { DonationType.create!(type_name: "Aquafina") }
   let(:item) { Item.create!(item_name: "water bottles", image: "case of Aquafina", donation_type_id: donation_type.id) }
   let(:donation) { Donation.create!(item_id: item.id, project_id: project.id, quantity_requested: 100, quantity_received: 50) }
+  let(:donation_type) { DonationType.create!(type_name: "Aquafina") }
 
   describe "associations" do
     it "has many items" do
@@ -46,6 +46,6 @@ describe DonationType do
   end
 
   describe "validations" do
-        it { should validate_presence_of(:type_name) }
+    it { should validate_presence_of(:type_name) }
   end
 end
