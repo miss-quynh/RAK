@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className="options-container">
         <ul>
-          <li><Link to="/donor">Donor</Link></li>
-          <li><Link to="/organization">Organization</Link></li>
+          <li><Link className="options-routes" to="/donor">Donor</Link></li>
+          <li><Link className="options-routes" to="/organization">Organization</Link></li>
         </ul>
       </div>
     );
