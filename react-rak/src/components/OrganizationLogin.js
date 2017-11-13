@@ -24,6 +24,7 @@ class OrganizationLogin extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
     var currentContext = this;
     this.serverRequest = axios
     .post("localhost:8181/organization_token", {
