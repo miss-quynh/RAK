@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 describe Category do
-  let(:category) { Category.new }
+  let(:category) { Category.create!(category_name: "Healthcare") }
 
   describe "validations" do
-    it "is valid when a category has a name" do
-      category.category_name = "Healthcare"
-      category.valid?
-      expect(category.errors[:category]).to be_empty
-    end
+    it { should have_many(:organizations) }
+
+    it { should have_many(:projects).through(:organizations)}
+  end
+
+  describe "validations" do
+    it { should validate_presence_of(:category_name) }
   end
 
 end
