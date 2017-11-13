@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
 import Project from './Project';
 
 class NewProjectForm extends React.Component {
@@ -12,8 +12,10 @@ class NewProjectForm extends React.Component {
         streetAddress: '',
         city: '',
         state: '',
-        zipCode: ''
-      }
+        zipCode: '',
+        description: ''
+      },
+      formSubmitted: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,7 +29,19 @@ class NewProjectForm extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
+    const formText = `?newProjectForm[fieldName]=${this.state.newProjectForm}`
+    fetch('http://localhost:8181/organizations/1' + formText, {
+      method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+      const newProjectForm = {...this.state.newProjectForm}
+      newProjectForm.push(data)
+      this.setState({newProjectForm})
+      this.setState({formSubmitted: true})
+    })
+
   }
 
   render() {
@@ -36,7 +50,7 @@ class NewProjectForm extends React.Component {
         <button onClick={this.props.toggleProjectFormState}>
           Add New Project
         </button>
-    )} else {
+    )} else if(this.props.displayNewProjectForm === true && this.state.formSubmitted === false) {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -59,10 +73,22 @@ class NewProjectForm extends React.Component {
             Zip Code:
             <input type="text" pattern="[0-9]{5}" title="Five digit zip code" value={this.state.newProjectForm.zipCode} onChange={(e) => this.handleChange(e, "zipCode")} />
           </label>
-          <input type="submit" value="Create" />
+          <label>
+            Description:
+            <input type="text" value={this.state.newProjectForm.description} onChange={(e) => this.handleChange(e, "description")} />
+          </label>
+          <input type="submit" value="Create New Project" />
         </form>
         )
       }
+      if(this.state.formSubmitted === true) {
+        {alert('some shit')}
+        return (
+          <Redirect to="/organizations/1/projects/1" />
+        )
+      }
+
+      return (<div>aksdfjklj</div>)
   }
 }
 

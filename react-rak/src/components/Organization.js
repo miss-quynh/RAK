@@ -23,7 +23,6 @@ class Organization extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       this.setState({ projects: data['projects'], name: data.organization.organization_name, mission_statement: data.organization.mission_statement })
     })
   }
