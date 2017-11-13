@@ -1,14 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Project from './Project';
 
 class Organization extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      organizations = []
+      projects: [],
+      name: '',
+      mission_statement: '',
     }
-
-    this.loadOrgImage = this.loadOrgImage.bind(this);
   }
 
   componentDidMount() {
@@ -17,17 +19,27 @@ class Organization extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({  })
+      console.log(data)
+      this.setState({ projects: data['projects'], name: data.organization.organization_name, mission_statement: data.organization.mission_statement })
     })
-  }
-
-  loadOrgImage() {
-
   }
 
   render() {
     return (
+      <div className='Organization-show-container'>
+        <h1>
+          <span className="organization-name-header">{this.state.name}</span>
+        </h1>
 
+        <p className="organization-mission-statement">
+          {this.state.mission_statement}
+        </p>
+
+        <ul>
+          {this.state.projects.map( project => <li><Link to={`/projects/${project.id}`}>{project.project_name}</Link></li>)
+          }
+        </ul>
+      </div>
     );
   }
 }
