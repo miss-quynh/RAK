@@ -23,6 +23,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/donors" component={Donor} />
+            // NEED TO DISCUSS WHY THERE ARE TWO OGRS/LOGIN PATHS
             <Route exact path="/organizations/login" />
             <Route path="/organizations/:id/projects/:id" component={ProjectOrganizationShow} />
             <Route path="/organizations/:id" component={Organization} />

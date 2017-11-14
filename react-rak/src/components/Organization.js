@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Project from './Project';
-import NewProjectForm from './NewProjectForm'
+import NewProjectForm from './NewProjectForm';
+import ProjectOrganizationShow from './ProjectOrganizationShow';
 
 class Organization extends React.Component {
 
@@ -55,6 +56,10 @@ class Organization extends React.Component {
           {this.state.projects.map( project => <li><Link to={`/projects/${project.id}`}>{project.project_name}</Link></li>)
           }
         </ul>
+
+        <ProjectOrganizationShow
+          toggleProjectFormState={this.toggleProjectFormState}
+        />
       </div>
     );
   }

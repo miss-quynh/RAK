@@ -1,33 +1,41 @@
 import React from 'react';
 import axios from 'axios';
+import Item from './Item';
+import Organization from './Organization';
+import NewProjectForm from './NewProjectForm';
 
-import Item from './Item'
-
-class ProjectDisp extends React.Component {
+class ProjectOrganizationShow extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       projectInfo: {},
-      items:[]
+      items_requested: []
+      // {item_name: '', quantity_requested: 1, quantity_achieved: 0}
     }
   }
 
   componentDidMount() {
-    const that = this
-    axios.get(`http://localhost:8181/projects/${that.props.match.params.id}`).then( function(response) {
+    axios.get(`http://localhost:8181/organizations/${this.props.match.params.id}/projects/${this.props.match.params.id}`)
+    .then( function(response) {
       console.log(response)
       const projectInfo = response.data["project"]
       const items = response.data["donations"]
 
-      that.setState({projectInfo})
-      that.setState({items})
+      this.setState({projectInfo})
+      this.setState({items})
     })
+  }
+
+  addNewItem() {
+    <button onClick={this.props.toggleProjectFormState}>
+      Request New Donation
+    </button>
   }
 
   render() {
     return (
-      <div>
+      <div className="project-organization-container">
         <div className="project-info">
           <h2>{this.state.projectInfo["project_name"]}</h2>
           {this.state.items.map((item) =>
@@ -38,4 +46,4 @@ class ProjectDisp extends React.Component {
     );
   }
 }
-export default ProjectDisp;
+export default ProjectOrganizationShow;

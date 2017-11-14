@@ -1,7 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
 import Project from './Project';
-import axios from 'axios';
+import ProjectOrganizationShow from './ProjectOrganizationShow';
 
 class NewProjectForm extends React.Component {
 
@@ -32,7 +33,7 @@ class NewProjectForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    axios.post(`http://localhost:8181/projects`, {project: this.state.newProjectForm, organization_id: this.props.organizationId})
+    axios.post('http://localhost:8181/projects', {project: this.state.newProjectForm, organization_id: this.props.organizationId})
     .then(({data}) => {
       const newProjectForm = Object.assign({}, {...this.state.newProjectForm}, data)
       this.setState({newProjectForm, formSubmitted: true})
@@ -40,12 +41,12 @@ class NewProjectForm extends React.Component {
   }
 
   render() {
-    if(this.props.displayNewProjectForm === false){
+    if(!this.props.displayNewProjectForm){
       return (
         <button onClick={this.props.toggleProjectFormState}>
-          Add New Project
+          Create New Project
         </button>
-    )} else if(this.props.displayNewProjectForm === true && this.state.formSubmitted === false) {
+    )} else if(this.props.displayNewProjectForm && !this.state.formSubmitted) {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -76,11 +77,16 @@ class NewProjectForm extends React.Component {
         </form>
         )
       }
-      if(this.state.formSubmitted === true) {
+      if(this.state.formSubmitted) {
         return (
           <Redirect to={`/organizations/${this.props.organizationId}/projects/${this.state.newProjectForm.id}`} />
         )
       }
+    <div>
+      <ProjectOrganizationShow
+        handleChange={this.handleChange}
+      />
+    </div>
   }
 }
 
