@@ -70,6 +70,22 @@ class ProjectsController < ApplicationController
 	end
 
 	def filter
+		@filters = {}
+		@filters[:categories] = []
+		@filters[:donation_type] = []
+		@filters[:events] = []
+
+		Category.all.each do |category|
+			@filters[:categories] << category.category_name
+		end
+		DonationType.all.each do |dontype|
+			@filters[:donation_type] << dontype.type_name
+		end
+		Event.order(created_at: :desc).limit(20).each do |event|
+			@filters[:events] << event.event_name
+		end
+
+		render json: @filters
 	end
 
 	private
