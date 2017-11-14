@@ -1843,3 +1843,185 @@ Completed 200 OK in 75ms (Views: 30.3ms | ActiveRecord: 28.8ms)
 Completed 200 OK in 127ms (Views: 64.2ms | ActiveRecord: 38.9ms)
 
 
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:47:32 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 1.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:49:04 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:49:36 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:51:02 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:51:13 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:51:33 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/organizations" for ::1 at 2017-11-13 20:16:11 -0800
+Processing by OrganizationsController#create as HTML
+  Parameters: {"organization"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007feb762ae900 @tempfile=#<Tempfile:/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/RackMultipart20171113-22578-1451u4i.png>, @original_filename="googlelogo_color_272x92dp.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"organization[avatar]\"; filename=\"googlelogo_color_272x92dp.png\"\r\nContent-Type: image/png\r\n">, "organization_name"=>"new org0.33546565956354457", "tax_code"=>"1329857", "email"=>"someone395@email.com", "password"=>"[FILTERED]", "category_id"=>"1"}}
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1db6vzn.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]' -auto-orient -resize "300x300>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/2de0aa044f88930f62d22567516c1faa20171113-22578-1dz4ctb'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1meiwdd.png[0]' -auto-orient -resize "100x100>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/2de0aa044f88930f62d22567516c1faa20171113-22578-wdr3jk'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "someone395@email.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "new org0.33546565956354457"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1kbd3na.png'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "password_digest", "category_id", "created_at", "updated_at", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["organization_name", "new org0.33546565956354457"], ["tax_code", 1329857], ["email", "someone395@email.com"], ["password_digest", "$2a$10$zZXmLAsQx25VwD2Z3m1mHOGJ7Q51pU9iFUfTgZWAVuC79dL9xaMuK"], ["category_id", 1], ["created_at", "2017-11-14 04:16:11.510864"], ["updated_at", "2017-11-14 04:16:11.510864"], ["avatar_file_name", "googlelogo_color_272x92dp.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 13504], ["avatar_updated_at", "2017-11-14 04:16:11.314758"]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 320ms (Views: 0.8ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/organizations" for ::1 at 2017-11-13 20:18:07 -0800
+Processing by OrganizationsController#create as HTML
+  Parameters: {"organization"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007feb72d03738 @tempfile=#<Tempfile:/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/RackMultipart20171113-22578-a6q1y6.png>, @original_filename="googlelogo_color_272x92dp.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"organization[avatar]\"; filename=\"googlelogo_color_272x92dp.png\"\r\nContent-Type: image/png\r\n">, "organization_name"=>"new org0.8514397288020121", "tax_code"=>"1329857", "email"=>"someone111@email.com", "password"=>"[FILTERED]", "category_id"=>"1"}}
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-w41803.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]' -auto-orient -resize "300x300>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/62ba1c7903261e6708f685d545be980f20171113-22578-14zy7id'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-117umym.png[0]' -auto-orient -resize "100x100>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/62ba1c7903261e6708f685d545be980f20171113-22578-t9d1y0'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "someone111@email.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "new org0.8514397288020121"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1e9ifax.png'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "password_digest", "category_id", "created_at", "updated_at", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["organization_name", "new org0.8514397288020121"], ["tax_code", 1329857], ["email", "someone111@email.com"], ["password_digest", "$2a$10$QXdY2POsQmn767wZsvhwCeChBNCHoOrWfa99Ww5/qxUdCPYY/p1uq"], ["category_id", 1], ["created_at", "2017-11-14 04:18:07.404693"], ["updated_at", "2017-11-14 04:18:07.404693"], ["avatar_file_name", "googlelogo_color_272x92dp.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 13504], ["avatar_updated_at", "2017-11-14 04:18:07.227390"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 306ms (Views: 0.9ms | ActiveRecord: 18.9ms)
+
+
+Started POST "/organizations" for ::1 at 2017-11-13 20:18:32 -0800
+Processing by OrganizationsController#create as HTML
+  Parameters: {"organization"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007feb72d3df00 @tempfile=#<Tempfile:/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/RackMultipart20171113-22578-2iflkn.png>, @original_filename="googlelogo_color_272x92dp.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"organization[avatar]\"; filename=\"googlelogo_color_272x92dp.png\"\r\nContent-Type: image/png\r\n">, "organization_name"=>"new org0.37281392343824526", "tax_code"=>"1329857", "email"=>"someone70@email.com", "password"=>"[FILTERED]", "category_id"=>"1"}}
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-qtvs6g.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]' -auto-orient -resize "300x300>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/c56ef702670107436b87ccd8d28491bc20171113-22578-32n7r5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-x9lh1m.png[0]' -auto-orient -resize "100x100>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/c56ef702670107436b87ccd8d28491bc20171113-22578-123eljy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "someone70@email.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "new org0.37281392343824526"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1pi8afq.png'
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "password_digest", "category_id", "created_at", "updated_at", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["organization_name", "new org0.37281392343824526"], ["tax_code", 1329857], ["email", "someone70@email.com"], ["password_digest", "$2a$10$vYoMG.dOjbp.vkLaIwR4z.kcG60I4K9l5dYKXxPMb4dTkE.imFJWG"], ["category_id", 1], ["created_at", "2017-11-14 04:18:32.452626"], ["updated_at", "2017-11-14 04:18:32.452626"], ["avatar_file_name", "googlelogo_color_272x92dp.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 13504], ["avatar_updated_at", "2017-11-14 04:18:32.267921"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 303ms (Views: 1.1ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/organizations" for ::1 at 2017-11-13 20:21:18 -0800
+Processing by OrganizationsController#create as HTML
+  Parameters: {"organization"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007feb76356e98 @tempfile=#<Tempfile:/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/RackMultipart20171113-22578-nofd8m.png>, @original_filename="googlelogo_color_272x92dp.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"organization[avatar]\"; filename=\"googlelogo_color_272x92dp.png\"\r\nContent-Type: image/png\r\n">, "organization_name"=>"new org0.666151605955392", "tax_code"=>"1329857", "email"=>"someone530@email.com", "password"=>"[FILTERED]", "category_id"=>"1"}}
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-qizu0t.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]' -auto-orient -resize "300x300>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/8d81a3be72b9c82a1999661527031adf20171113-22578-98k1fq'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-180sb37.png[0]' -auto-orient -resize "100x100>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/8d81a3be72b9c82a1999661527031adf20171113-22578-vbf1bh'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "someone530@email.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "new org0.666151605955392"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1op3tz9.png'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "password_digest", "category_id", "created_at", "updated_at", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["organization_name", "new org0.666151605955392"], ["tax_code", 1329857], ["email", "someone530@email.com"], ["password_digest", "$2a$10$kuNolVvVrEIcWEO4FQaGjOHSIhOfOgucAMDyiaG106xkoqq4PrbXq"], ["category_id", 1], ["created_at", "2017-11-14 04:21:19.157166"], ["updated_at", "2017-11-14 04:21:19.157166"], ["avatar_file_name", "googlelogo_color_272x92dp.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 13504], ["avatar_updated_at", "2017-11-14 04:21:18.944832"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 377ms (Views: 1.4ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2017-11-13 20:22:17 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/organizations" for ::1 at 2017-11-13 20:29:17 -0800
+Processing by OrganizationsController#create as HTML
+  Parameters: {"organization"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007feb72edca28 @tempfile=#<Tempfile:/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/RackMultipart20171113-22578-37x8cu.png>, @original_filename="googlelogo_color_272x92dp.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"organization[avatar]\"; filename=\"googlelogo_color_272x92dp.png\"\r\nContent-Type: image/png\r\n">, "organization_name"=>"new org0.7772404429907152", "tax_code"=>"1329857", "email"=>"someone383@email.com", "password"=>"[FILTERED]", "category_id"=>"1"}}
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-1o9s6pl.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]' -auto-orient -resize "300x300>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/29519dd08af7867eabea11c77360c72620171113-22578-1l2gbw0'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]'
+Command :: convert '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-3x30h4.png[0]' -auto-orient -resize "100x100>" '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/29519dd08af7867eabea11c77360c72620171113-22578-zlkwfi'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "someone383@email.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "new org0.7772404429907152"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/_c/7cmjqt3d051475p3v8xl5dlr0000gn/T/3ca79968fcf8649b03132e00706579a220171113-22578-uo1cbn.png'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "password_digest", "category_id", "created_at", "updated_at", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["organization_name", "new org0.7772404429907152"], ["tax_code", 1329857], ["email", "someone383@email.com"], ["password_digest", "$2a$10$CdhNnelvVNLBkpRPiKDH0evB4DKxj.o0s4tbBgcu06AMIL7h1hpS6"], ["category_id", 1], ["created_at", "2017-11-14 04:29:17.984817"], ["updated_at", "2017-11-14 04:29:17.984817"], ["avatar_file_name", "googlelogo_color_272x92dp.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 13504], ["avatar_updated_at", "2017-11-14 04:29:17.797807"]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 313ms (Views: 0.9ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for ::1 at 2017-11-13 20:29:51 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+

@@ -21,7 +21,7 @@ class OrganizationsController < ApplicationController
     p "*" * 100
     @organization = Organization.new(organization_params)
     if @organization.save
-      render json: @organization
+      render json: {organization: @organization, image_url: @organization.avatar.url}
     else
       render json: {errors: @organization.errors.full_messages}, status: 422
     end
