@@ -8,8 +8,9 @@ class ProjectsController < ApplicationController
 	#visible to signed all users
 	def show
 	  @project = Project.find(params[:id])
+	  @closest_projects = @project.closest_projects(donor_zipcode)
 
-	  render json: {project: @project, donations: @project.project_donations }
+	  render json: {project: @project, closest_projects: @closest_projects, donations: @project.project_donations }
 	end
 
 	#visible to signed-in organizations
@@ -69,6 +70,22 @@ class ProjectsController < ApplicationController
 	end
 
 	def filter
+		@filters = {}
+		@filters[:categories] = []
+		@filters[:donation_type] = []
+		@filters[:events] = []
+
+		Category.all.each do |category|
+			@filters[:categories] << category.category_name
+		end
+		DonationType.all.each do |dontype|
+			@filters[:donation_type] << dontype.type_name
+		end
+		Event.order(created_at: :desc).limit(20).each do |event|
+			@filters[:events] << event.event_name
+		end
+
+		render json: @filters
 	end
 
 	private
