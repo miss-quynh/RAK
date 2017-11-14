@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
 
-
 	def index
 		@projects = Project.all
 		render json: @projects
@@ -9,7 +8,6 @@ class ProjectsController < ApplicationController
 	#visible to signed all users
 	def show
 	  @project = Project.find(params[:id])
-
 
 	  render json: {project: @project, donations: @project.project_donations }
 	end
@@ -26,7 +24,9 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		authenticate_organization # method comes from Knock gem
+		# Causes double render if other render is used in controller.
+		# TODO - Figure out restricting orgs from creating if not signed in
+		# authenticate_organization # method comes from Knock gem
 	  @project = Project.new(project_params)
 		@organization = Organization.find(params[:organization_id])
 		@project.organization = @organization
@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
 	  	render json: @project
 	  else
 	  	@errors = @project.errors.full_messages
-	  	render json: @errors, status: 406
+	  	render json: @errors
 	  end
 	end
 

@@ -2278,3 +2278,1903 @@ Processing by OrganizationsController#show as */*
 Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 5.7ms)
 
 
+Started GET "/organizations/12" for ::1 at 2017-11-13 17:40:22 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategory Load (100.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (5.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 12]]
+Completed 200 OK in 131ms (Views: 3.6ms | ActiveRecord: 106.9ms)
+
+
+Started GET "/organizations/12" for ::1 at 2017-11-13 17:40:39 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mOrganization Load (2.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 12]]
+Completed 200 OK in 26ms (Views: 3.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 17:41:21 -0800
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"2", "street_address"=>"2", "city"=>"2", "state"=>"2", "zip_code"=>"22222", "description"=>"2"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 538ms (ActiveRecord: 8.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started GET "/organizations/12" for ::1 at 2017-11-13 18:03:49 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 12]]
+Completed 200 OK in 101ms (Views: 13.3ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:03:57 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 6.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:05:41 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:05:45 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:05:45 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (26.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 26.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:06:00 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:06:04 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:06:46 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:06:51 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:06:51 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (4.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 7.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:07:23 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 579ms (ActiveRecord: 7.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:07:54 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:08:00 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:09:43 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:10:12 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:10:36 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"1", "city"=>"1", "state"=>"1", "zip_code"=>"11111", "description"=>"1"}, "organization_id"=>"12"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started POST "/organizations/12/projects" for ::1 at 2017-11-13 18:13:51 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/organizations/12/projects"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/organizations/12" for ::1 at 2017-11-13 18:15:16 -0800
+Started POST "/projects" for ::1 at 2017-11-13 18:15:26 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 12]]
+Completed 200 OK in 107ms (Views: 14.1ms | ActiveRecord: 23.1ms)
+
+
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"kjlaksdj", "city"=>"klja", "state"=>"lkj", "zip_code"=>"34938", "description"=>"aksldjflk"}}
+Completed 204 No Content in 17ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:16:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"adsf", "state"=>"adsf", "zip_code"=>"12311", "description"=>"asdfas"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:16:32 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-11-13 18:16:43 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (82.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 131ms (ActiveRecord: 82.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=1):
+  
+app/controllers/organizations_controller.rb:9:in `show'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:16:50 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 204ms (Views: 6.6ms | ActiveRecord: 155.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:17:16 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"asdf", "state"=>"asdfasfd", "zip_code"=>"12312", "description"=>"asdasfd"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:17:17 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"asdf", "state"=>"asdfasfd", "zip_code"=>"12312", "description"=>"asdasfd"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:17:58 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (23.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 30ms (Views: 6.2ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:18:01 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (7.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:18:12 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdfasd", "city"=>"asdf", "state"=>"asdf", "zip_code"=>"23234", "description"=>"asdfasdf"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:18:12 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdfasd", "city"=>"asdf", "state"=>"asdf", "zip_code"=>"23234", "description"=>"asdfasdf"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:18:32 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (20.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (9.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 206ms (Views: 3.5ms | ActiveRecord: 30.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:18:42 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdfas", "city"=>"asdfasf", "state"=>"aasdf", "zip_code"=>"13242", "description"=>"asdfasd"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:19:29 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (10.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 228ms (Views: 3.4ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:19:37 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfasd"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:19:53 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (4.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (3.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 183ms (Views: 3.6ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:20:00 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdfa"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:20:59 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (4.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (217.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 229ms (Views: 3.2ms | ActiveRecord: 222.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:21:03 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdf"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:21:27 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (22.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 62ms (Views: 3.8ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:21:30 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>""}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:21:58 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 130ms (Views: 3.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:22:03 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:23:33 -0800
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 105ms (Views: 13.3ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:23:38 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 5.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=):
+  
+app/controllers/projects_controller.rb:31:in `create'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:24:20 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (3.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (33.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 66ms (Views: 3.6ms | ActiveRecord: 37.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:24:24 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>""}}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=):
+  
+app/controllers/projects_controller.rb:31:in `create'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:25:50 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 22ms (Views: 3.3ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:25:55 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+Started POST "/projects" for ::1 at 2017-11-13 18:26:10 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (2.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 135498ms (ActiveRecord: 5.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:45:in `create'
+Completed   in 175353ms (ActiveRecord: 3.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:28:58 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfafd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfafd"], ["organization_id", 11], ["created_at", "2017-11-14 02:29:10.003428"], ["updated_at", "2017-11-14 02:29:10.003428"]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/projects" for ::1 at 2017-11-13 18:30:36 -0800
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:30:36 -0800
+Processing by ProjectsController#create as HTML
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfasdf"}, "organization_id"=>"11"}
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 97794ms (ActiveRecord: 27.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+  [1m[36mOrganization Load (1.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (66.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfasdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:30:38.847450"], ["updated_at", "2017-11-14 02:30:38.847450"]]
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 2117ms (ActiveRecord: 107.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 198ms (Views: 5.2ms | ActiveRecord: 49.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:30:43 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfasdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfasdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:30:57.661057"], ["updated_at", "2017-11-14 02:30:57.661057"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 13835ms (ActiveRecord: 7.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:42:in `create'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:31:11 -0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 91ms (Views: 14.0ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:31:15 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdfasd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdfasd"], ["organization_id", 11], ["created_at", "2017-11-14 02:31:15.652315"], ["updated_at", "2017-11-14 02:31:15.652315"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 16.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:31:30 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdfasd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdfasd"], ["organization_id", 11], ["created_at", "2017-11-14 02:31:30.424121"], ["updated_at", "2017-11-14 02:31:30.424121"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:31:31 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdfasd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdfasd"], ["organization_id", 11], ["created_at", "2017-11-14 02:31:31.305293"], ["updated_at", "2017-11-14 02:31:31.305293"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 9.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:31:31 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdfasd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdfasd"], ["organization_id", 11], ["created_at", "2017-11-14 02:31:31.888558"], ["updated_at", "2017-11-14 02:31:31.888558"]]
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 8.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:33:03 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (7.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 18ms (Views: 6.5ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:33:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfadf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfadf"], ["organization_id", 11], ["created_at", "2017-11-14 02:33:09.432247"], ["updated_at", "2017-11-14 02:33:09.432247"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:33:31 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfadf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfadf"], ["organization_id", 11], ["created_at", "2017-11-14 02:33:31.887286"], ["updated_at", "2017-11-14 02:33:31.887286"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 8.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:33:31 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfadf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfadf"], ["organization_id", 11], ["created_at", "2017-11-14 02:33:31.941753"], ["updated_at", "2017-11-14 02:33:31.941753"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 5.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:33:51 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfadf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfadf"], ["organization_id", 11], ["created_at", "2017-11-14 02:33:51.946286"], ["updated_at", "2017-11-14 02:33:51.946286"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 8.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:34:20 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfadf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfadf"], ["organization_id", 11], ["created_at", "2017-11-14 02:34:20.390049"], ["updated_at", "2017-11-14 02:34:20.390049"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 65ms (Views: 0.6ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:35:24 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:35:24.946106"], ["updated_at", "2017-11-14 02:35:24.946106"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:35:41 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 107ms (Views: 18.5ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:35:45 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:35:46.016329"], ["updated_at", "2017-11-14 02:35:46.016329"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:35:54 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (11.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 88ms (Views: 9.1ms | ActiveRecord: 14.4ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:36:03 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdfas", "street_address"=>"asdfasdf", "city"=>"asdfasdf", "state"=>"asdfaf", "zip_code"=>"23234", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdfas"], ["street_address", "asdfasdf"], ["city", "asdfasdf"], ["state", "asdfaf"], ["zip_code", 23234], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:36:03.805752"], ["updated_at", "2017-11-14 02:36:03.805752"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:37:36 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (52.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 81ms (Views: 9.3ms | ActiveRecord: 55.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:37:55 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"qert", "street_address"=>"tyu", "city"=>"l;j", "state"=>"oiu", "zip_code"=>"98765", "description"=>"hkdsfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "qert"], ["street_address", "tyu"], ["city", "l;j"], ["state", "oiu"], ["zip_code", 98765], ["description", "hkdsfg"], ["organization_id", 11], ["created_at", "2017-11-14 02:37:55.015458"], ["updated_at", "2017-11-14 02:37:55.015458"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:38:12 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 149ms (Views: 16.8ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:38:23 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"vbnghj", "street_address"=>"dfg", "city"=>"df", "state"=>"dfg", "zip_code"=>"98765", "description"=>"dfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "vbnghj"], ["street_address", "dfg"], ["city", "df"], ["state", "dfg"], ["zip_code", 98765], ["description", "dfg"], ["organization_id", 11], ["created_at", "2017-11-14 02:38:23.157041"], ["updated_at", "2017-11-14 02:38:23.157041"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 16.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 18:42:00 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"adf", "street_address"=>"adsf", "city"=>"adf", "state"=>"adf", "zip_code"=>"21345", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "adf"], ["street_address", "adsf"], ["city", "adf"], ["state", "adf"], ["zip_code", 21345], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 02:42:00.574432"], ["updated_at", "2017-11-14 02:42:00.574432"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 14.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:44:43 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (2.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 262ms (Views: 14.2ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/projects/27" for ::1 at 2017-11-13 18:44:54 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mProject Load (5.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 27]]
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:44:55 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (4.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/projects/11" for ::1 at 2017-11-13 18:44:57 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (5.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 11]]
+  [1m[36mItem Load (6.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 1.3ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:44:58 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/projects/38" for ::1 at 2017-11-13 18:45:00 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 38]]
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:45:01 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (8.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/projects/37" for ::1 at 2017-11-13 18:57:36 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 37]]
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:57:38 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 20ms (Views: 12.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/11" for ::1 at 2017-11-13 18:57:59 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDonation Load (8.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 11]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 0.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:58:05 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (3.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 30ms (Views: 11.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 18:58:57 -0800
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 140ms (Views: 17.2ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 18:59:14 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 02:59:14.629236"], ["updated_at", "2017-11-14 02:59:14.629236"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 14.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:01:11 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:01:11.969841"], ["updated_at", "2017-11-14 03:01:11.969841"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 7.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:02:04 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:02:04.895599"], ["updated_at", "2017-11-14 03:02:04.895599"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 7.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:02:28 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:02:28.443743"], ["updated_at", "2017-11-14 03:02:28.443743"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:02:56 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:02:56.852656"], ["updated_at", "2017-11-14 03:02:56.852656"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 59ms (ActiveRecord: 14.4ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:03:25 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:03:25.998678"], ["updated_at", "2017-11-14 03:03:25.998678"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 26ms (ActiveRecord: 14.8ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:03:54 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:03:54.662018"], ["updated_at", "2017-11-14 03:03:54.662018"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 13ms (ActiveRecord: 9.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:02 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:02.770357"], ["updated_at", "2017-11-14 03:04:02.770357"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 12ms (ActiveRecord: 8.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:03 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:03.427534"], ["updated_at", "2017-11-14 03:04:03.427534"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 14ms (ActiveRecord: 9.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:04 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:04.045890"], ["updated_at", "2017-11-14 03:04:04.045890"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 15ms (ActiveRecord: 10.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:04 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:04.727876"], ["updated_at", "2017-11-14 03:04:04.727876"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 14ms (ActiveRecord: 9.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:05 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:05.234929"], ["updated_at", "2017-11-14 03:04:05.234929"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 14ms (ActiveRecord: 9.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:04:43 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:04:43.098157"], ["updated_at", "2017-11-14 03:04:43.098157"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 14ms (ActiveRecord: 9.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:06 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:06.667094"], ["updated_at", "2017-11-14 03:06:06.667094"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 16ms (ActiveRecord: 10.1ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:07 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:07.592792"], ["updated_at", "2017-11-14 03:06:07.592792"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 13ms (ActiveRecord: 9.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:08.229401"], ["updated_at", "2017-11-14 03:06:08.229401"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:08.566686"], ["updated_at", "2017-11-14 03:06:08.566686"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 15ms (ActiveRecord: 9.8ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (4.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:08.740728"], ["updated_at", "2017-11-14 03:06:08.740728"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 30ms (ActiveRecord: 23.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:08.985513"], ["updated_at", "2017-11-14 03:06:08.985513"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 25ms (ActiveRecord: 20.1ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.1ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:09.084394"], ["updated_at", "2017-11-14 03:06:09.084394"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 31ms (ActiveRecord: 22.8ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:09.246144"], ["updated_at", "2017-11-14 03:06:09.246144"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 20ms (ActiveRecord: 13.1ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:09.423102"], ["updated_at", "2017-11-14 03:06:09.423102"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 16ms (ActiveRecord: 7.1ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:09 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:06:09.594745"], ["updated_at", "2017-11-14 03:06:09.594745"]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 27ms (ActiveRecord: 17.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:06:55 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x007fe959c5e118>
+Did you mean?  try):
+  
+app/controllers/projects_controller.rb:27:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:07:17 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x007fe9592209a8>
+Did you mean?  try):
+  
+app/controllers/projects_controller.rb:27:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:07:19 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x007fe95a9fd9e0>
+Did you mean?  try):
+  
+app/controllers/projects_controller.rb:27:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:07:37 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:08:13.583037"], ["updated_at", "2017-11-14 03:08:13.583037"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 36122ms (ActiveRecord: 14.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:39:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:08:44 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:08:44.757753"], ["updated_at", "2017-11-14 03:08:44.757753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 8.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:09:19 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:09:20.289424"], ["updated_at", "2017-11-14 03:09:20.289424"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 15.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/projects_controller.rb:37:in `create'
+Started POST "/projects" for ::1 at 2017-11-13 19:10:28 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:10:29.280198"], ["updated_at", "2017-11-14 03:10:29.280198"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 64ms (ActiveRecord: 17.2ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:12:13 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asf", "street_address"=>"dg", "city"=>"adf", "state"=>"wqer", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asf"], ["street_address", "dg"], ["city", "adf"], ["state", "wqer"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:12:14.098931"], ["updated_at", "2017-11-14 03:12:14.098931"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 64ms (Views: 0.6ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:12:55 -0800
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 117ms (Views: 23.1ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:13:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 03:13:08.312104"], ["updated_at", "2017-11-14 03:13:08.312104"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 19:16:43 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 19:16:43 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mOrganization Load (3.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 47ms (Views: 29.2ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:16:56 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (4.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 186ms (Views: 33.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:17:47 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 266ms (Views: 25.5ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:18:36 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 03:18:37.146875"], ["updated_at", "2017-11-14 03:18:37.146875"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 66ms (ActiveRecord: 13.6ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:20:32 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdf"], ["organization_id", 11], ["created_at", "2017-11-14 03:20:33.140275"], ["updated_at", "2017-11-14 03:20:33.140275"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 52ms (Views: 0.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:23:00 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 273ms (Views: 37.5ms | ActiveRecord: 78.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:26:48 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (15.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (108.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 195ms (Views: 64.3ms | ActiveRecord: 123.9ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:27:12 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"fff"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "fff"], ["organization_id", 11], ["created_at", "2017-11-14 03:27:12.059169"], ["updated_at", "2017-11-14 03:27:12.059169"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:28:34 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 164ms (Views: 142.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:28:48 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Quynh Nguyen", "street_address"=>"668 North 4th Street", "city"=>"San Jose", "state"=>"California", "zip_code"=>"95112", "description"=>"rtyrtytyr"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Quynh Nguyen"], ["street_address", "668 North 4th Street"], ["city", "San Jose"], ["state", "California"], ["zip_code", 95112], ["description", "rtyrtytyr"], ["organization_id", 11], ["created_at", "2017-11-14 03:28:48.480014"], ["updated_at", "2017-11-14 03:28:48.480014"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:29:37 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (6.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (97.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 160ms (Views: 36.4ms | ActiveRecord: 109.2ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:35:31 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (9.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 40ms (Views: 27.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:35:37 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (105.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 144ms (Views: 28.1ms | ActiveRecord: 109.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:35:48 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Mai", "street_address"=>"asf", "city"=>"dfg", "state"=>"adf", "zip_code"=>"12345", "description"=>"sdfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Mai"], ["street_address", "asf"], ["city", "dfg"], ["state", "adf"], ["zip_code", 12345], ["description", "sdfg"], ["organization_id", 11], ["created_at", "2017-11-14 03:35:48.323044"], ["updated_at", "2017-11-14 03:35:48.323044"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 1.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:35:58 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (6.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (141.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 180ms (Views: 27.2ms | ActiveRecord: 148.8ms)
+
+
+Started GET "/projects/72" for ::1 at 2017-11-13 19:36:02 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 72]]
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:36:04 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (3.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 27ms (Views: 18.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/projects/69" for ::1 at 2017-11-13 19:36:06 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 69]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:36:12 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (5.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 40ms (Views: 16.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:39:07 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (3.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 90ms (Views: 80.7ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:39:34 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Win", "street_address"=>"jhg", "city"=>"hgfd", "state"=>"hgnfd", "zip_code"=>"95111", "description"=>"hg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Win"], ["street_address", "jhg"], ["city", "hgfd"], ["state", "hgnfd"], ["zip_code", 95111], ["description", "hg"], ["organization_id", 11], ["created_at", "2017-11-14 03:39:34.655839"], ["updated_at", "2017-11-14 03:39:34.655839"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:40:18 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (6.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (112.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 150ms (Views: 26.9ms | ActiveRecord: 120.1ms)
+
+
+Started GET "/projects/73" for ::1 at 2017-11-13 19:40:20 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 73]]
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 19:40:49 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 19:51:08 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"Hello", "street_address"=>"adf", "city"=>"adf", "state"=>"adsf", "zip_code"=>"23455", "description"=>"asf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "Hello"], ["street_address", "adf"], ["city", "adf"], ["state", "adsf"], ["zip_code", 23455], ["description", "asf"], ["organization_id", 11], ["created_at", "2017-11-14 03:51:08.278981"], ["updated_at", "2017-11-14 03:51:08.278981"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:15:08 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (114.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 158ms (Views: 33.5ms | ActiveRecord: 114.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 20:15:34 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"HIIIII", "street_address"=>"d", "city"=>"d", "state"=>"d", "zip_code"=>"12345", "description"=>"f"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "HIIIII"], ["street_address", "d"], ["city", "d"], ["state", "d"], ["zip_code", 12345], ["description", "f"], ["organization_id", 11], ["created_at", "2017-11-14 04:15:34.097627"], ["updated_at", "2017-11-14 04:15:34.097627"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 1.1ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:15:37 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (8.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (101.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 147ms (Views: 28.0ms | ActiveRecord: 111.3ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:16:20 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 49ms (Views: 31.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:25:40 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (7.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 89ms (Views: 70.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:25:54 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (2.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (2.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 61ms (Views: 45.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:25:59 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (12.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 51ms (Views: 33.7ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:26:08 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (10.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 70ms (Views: 50.8ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 20:26:25 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"FUUUUUU", "street_address"=>"adf", "city"=>"asf", "state"=>"adf", "zip_code"=>"12345", "description"=>"dsfg"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "FUUUUUU"], ["street_address", "adf"], ["city", "asf"], ["state", "adf"], ["zip_code", 12345], ["description", "dsfg"], ["organization_id", 11], ["created_at", "2017-11-14 04:26:25.242633"], ["updated_at", "2017-11-14 04:26:25.242633"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:26:28 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 64ms (Views: 56.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/76" for ::1 at 2017-11-13 20:26:45 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 76]]
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:26:50 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:34:30 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (60.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 133ms (Views: 44.8ms | ActiveRecord: 65.6ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:34:39 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (4.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 95ms (Views: 81.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:34:46 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (9.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 119ms (Views: 97.8ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/projects/11" for ::1 at 2017-11-13 20:34:51 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 11]]
+  [1m[36mItem Load (6.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 0.6ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:35:02 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (1.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 47ms (Views: 31.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:37:49 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:38:43 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 45ms (Views: 39.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/22" for ::1 at 2017-11-13 20:38:45 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 22]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organizations/11" for ::1 at 2017-11-13 20:38:46 -0800
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."organization_id" = $1[0m  [["organization_id", 11]]
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 20:39:03 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"WHATEVER", "street_address"=>"sdf", "city"=>"asf", "state"=>"asdf", "zip_code"=>"24534", "description"=>"df"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "WHATEVER"], ["street_address", "sdf"], ["city", "asf"], ["state", "asdf"], ["zip_code", 24534], ["description", "df"], ["organization_id", 11], ["created_at", "2017-11-14 04:39:03.369005"], ["updated_at", "2017-11-14 04:39:03.369005"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/projects/null" for ::1 at 2017-11-13 20:39:03 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"null"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=null):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started GET "/projects/null" for ::1 at 2017-11-13 20:43:00 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"null"}
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=null):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started POST "/projects" for ::1 at 2017-11-13 20:43:11 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"fsdafsdfasdfasdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "fsdafsdfasdfasdf"], ["organization_id", 11], ["created_at", "2017-11-14 04:43:11.492740"], ["updated_at", "2017-11-14 04:43:11.492740"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/undefined" for ::1 at 2017-11-13 20:43:11 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=undefined):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started GET "/projects/undefined" for ::1 at 2017-11-13 20:44:14 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=undefined):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started POST "/projects" for ::1 at 2017-11-13 20:44:25 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfasdf"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfasdf"], ["organization_id", 11], ["created_at", "2017-11-14 04:44:25.395979"], ["updated_at", "2017-11-14 04:44:25.395979"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/projects/undefined" for ::1 at 2017-11-13 20:44:25 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=undefined):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started GET "/projects/undefined" for ::1 at 2017-11-13 20:45:15 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=undefined):
+  
+app/controllers/projects_controller.rb:10:in `show'
+Started POST "/projects" for ::1 at 2017-11-13 20:45:24 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"asdfasd"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "asdfasd"], ["organization_id", 11], ["created_at", "2017-11-14 04:45:24.178303"], ["updated_at", "2017-11-14 04:45:24.178303"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/projects/80" for ::1 at 2017-11-13 20:45:24 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 80]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/80" for ::1 at 2017-11-13 20:46:40 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 80]]
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/projects" for ::1 at 2017-11-13 20:46:51 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"asdf", "street_address"=>"asdf", "city"=>"aasdf", "state"=>"asdf", "zip_code"=>"12323", "description"=>"bbbbbb"}, "organization_id"=>"11"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["project_name", "asdf"], ["street_address", "asdf"], ["city", "aasdf"], ["state", "asdf"], ["zip_code", 12323], ["description", "bbbbbb"], ["organization_id", 11], ["created_at", "2017-11-14 04:46:51.291586"], ["updated_at", "2017-11-14 04:46:51.291586"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/81" for ::1 at 2017-11-13 20:46:51 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 81]]
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/81" for ::1 at 2017-11-13 20:47:43 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 81]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/81" for ::1 at 2017-11-13 20:51:51 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 81]]
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/81" for ::1 at 2017-11-13 20:52:15 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 81]]
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/81" for ::1 at 2017-11-13 20:56:48 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 81]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+
+

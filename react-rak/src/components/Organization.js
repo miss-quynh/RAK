@@ -18,11 +18,12 @@ class Organization extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8181/organizations/1', {
+    fetch(`http://localhost:8181/organizations/${this.props.match.params.id}`, {
       method: 'GET'
     })
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       this.setState({ projects: data['projects'], name: data.organization.organization_name, mission_statement: data.organization.mission_statement })
     })
   }
@@ -45,6 +46,7 @@ class Organization extends React.Component {
         </p>
 
         <NewProjectForm
+          organizationId={this.props.match.params.id}
           displayNewProjectForm={this.state.displayNewProjectForm}
           toggleProjectFormState={this.toggleProjectFormState}
         />

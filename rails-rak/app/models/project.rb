@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :organization
-  belongs_to :event
+  belongs_to :event, optional: true
   has_one :category, through: :organization
   has_many :donations
   has_many :items, through: :donations

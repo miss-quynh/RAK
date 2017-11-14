@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 // import './Home.css';
-import Home from './components/Home'
-import Donor from './components/Donor'
-import Organization from './components/Organization'
-import ProjectDisp from './components/ProjectDisp'
-import OrganizationLogin from './components/OrganizationLogin'
+import Home from './components/Home';
+import Donor from './components/Donor';
+import Organization from './components/Organization';
+import ProjectDisp from './components/ProjectDisp';
+import OrganizationLogin from './components/OrganizationLogin';
+import ProjectOrganizationShow from './components/ProjectOrganizationShow';
 
 class App extends React.Component {
 
