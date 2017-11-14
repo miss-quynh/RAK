@@ -8,19 +8,9 @@ class OrganizationLogin extends React.Component {
       email: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    var value = event.target.value;
-
-    this.setState(function () {
-      return {
-        email: value
-      }
-    });
-  }
 
   handleSubmit(event) {
     event.preventDefault();
