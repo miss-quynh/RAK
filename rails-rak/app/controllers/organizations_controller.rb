@@ -7,10 +7,9 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    @closest_organizations = @organization.closest_organizations(donor_zipcode)
     @organization_projects = @organization.projects
-    
-    render json: {organization: @organization, closest_organizations: @closest_organizations, projects: @projects, category: @organization.category}
+
+    render json: {organization: @organization, projects: @projects, category: @organization.category}
 
   end
 
@@ -21,7 +20,7 @@ class OrganizationsController < ApplicationController
   def create
     if GuidestarSearchAdapter.verify_organization(organization_params[:ein])
       @organization = Organization.new(organization_params)
-    end 
+    end
 
     if @organization.save
       render json: @organization
