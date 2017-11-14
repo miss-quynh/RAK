@@ -8,6 +8,7 @@ import Donor from './components/Donor'
 import Organization from './components/Organization'
 import ProjectDisp from './components/ProjectDisp'
 import OrganizationLogin from './components/OrganizationLogin'
+import ImageUpload from './components/ImageUpload'
 import DonorLogin from './components/DonorLogin'
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route path="/organizations/:id" component={Organization} />
             <Route path="/projects/:id" component={ProjectDisp} />
             <Route path="/organizations/login" component={OrganizationLogin} />
+            <Route exact path="/image_upload" component={ImageUpload} />
             <Route path="/donors/login" component={DonorLogin} />
             <Route render={() => <h1>Page not found</h1>} />
           </Switch>
