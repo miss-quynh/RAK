@@ -612,3 +612,2419 @@ background-color:#555555;}
 app/models/guidestar_search_adapter.rb:24:in `p'
 app/models/guidestar_search_adapter.rb:24:in `verify_organization'
 app/controllers/organizations_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(668351835940483275)[0m
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-13 22:28:34.956789"], ["updated_at", "2017-11-13 22:28:34.956789"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(668351835940483275)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/organizations" for ::1 at 2017-11-13 14:29:52 -0800
+Started GET "/projects" for ::1 at 2017-11-13 14:29:52 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#index as HTML
+  [1m[36mOrganization Load (14.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mProject Load (17.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 86ms (Views: 5.4ms | ActiveRecord: 18.0ms)
+
+
+Completed 200 OK in 87ms (Views: 2.7ms | ActiveRecord: 22.2ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mDonor Load (6.4ms)[0m  [1m[34mSELECT "donors".* FROM "donors"[0m
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mEvent Load (18.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mItem Load (22.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mDonationType Load (3.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mDonation Load (15.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "mariane.kub@oconnell.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Cayla"], ["last_name", "Schmidt"], ["email", "mariane.kub@oconnell.org"], ["street_address", "83014 Layla Forest"], ["city", "Angelitabury"], ["state", "ND"], ["zip_code", 22627], ["password_digest", "$2a$10$mAtlfvMpAikveOUGGqHZKejtTIbbuAN1kdQGAot5nTvtN7x4oFBrm"], ["created_at", "2017-11-13 22:30:24.085306"], ["updated_at", "2017-11-13 22:30:24.085306"]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "grayce@johnson.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Jack"], ["last_name", "Hickle"], ["email", "grayce@johnson.biz"], ["street_address", "314 Carson Drive"], ["city", "South Rosellafurt"], ["state", "IL"], ["zip_code", 19759], ["password_digest", "$2a$10$.t54G8ZR6IdRNFJUGEDIWO6cTgBDhTcHXDCS8lOZuMXq35bSdQXWm"], ["created_at", "2017-11-13 22:30:24.183415"], ["updated_at", "2017-11-13 22:30:24.183415"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "randal@howejacobs.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Pedro"], ["last_name", "Bins"], ["email", "randal@howejacobs.org"], ["street_address", "26670 Anahi Rapid"], ["city", "Liaberg"], ["state", "CO"], ["zip_code", 98051], ["password_digest", "$2a$10$bkzXnIytvk8d42w7ZcsB9eE4Fkmf8Lvt1SDW2lg2Cre9vzHT8w8g2"], ["created_at", "2017-11-13 22:30:24.269918"], ["updated_at", "2017-11-13 22:30:24.269918"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "rodger_marquardt@fritsch.co"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Christa"], ["last_name", "Cole"], ["email", "rodger_marquardt@fritsch.co"], ["street_address", "953 Elliot Points"], ["city", "North Gloriamouth"], ["state", "ME"], ["zip_code", 82905], ["password_digest", "$2a$10$p/vGhJZV4Ibs714eXsMJU.SPgcHJ9z6/OvH1RH83woQ702wpBaymK"], ["created_at", "2017-11-13 22:30:24.357542"], ["updated_at", "2017-11-13 22:30:24.357542"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "brice@vonruedenhettinger.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Korbin"], ["last_name", "Reichel"], ["email", "brice@vonruedenhettinger.biz"], ["street_address", "50598 Dominique Centers"], ["city", "Jerdeland"], ["state", "MO"], ["zip_code", 79495], ["password_digest", "$2a$10$QOcb01DlB2PN0eCj8szo2.5fi5r6xAZDltl4xN7VzdPsWb.5hR7Vm"], ["created_at", "2017-11-13 22:30:24.442929"], ["updated_at", "2017-11-13 22:30:24.442929"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "monroe_ernser@larson.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Diamond"], ["last_name", "King"], ["email", "monroe_ernser@larson.io"], ["street_address", "4928 Theron Passage"], ["city", "West Harleyshire"], ["state", "AK"], ["zip_code", 43272], ["password_digest", "$2a$10$CUw8sV5yv3HHycXx8MbYEOSIxVYJ8lwrdzb4QZW2E/W.s7vuZYr7S"], ["created_at", "2017-11-13 22:30:24.530947"], ["updated_at", "2017-11-13 22:30:24.530947"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "hailee@medhurst.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Domenick"], ["last_name", "Gorczany"], ["email", "hailee@medhurst.biz"], ["street_address", "954 Kling Locks"], ["city", "New Litzy"], ["state", "IN"], ["zip_code", 38472], ["password_digest", "$2a$10$GUOAV.DWyqQzFj.b.NDV3.QyWvNjc9qIcaFmAvb8bTpGB6xr8yEY6"], ["created_at", "2017-11-13 22:30:24.608503"], ["updated_at", "2017-11-13 22:30:24.608503"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "magdalena.heaney@dubuquehermann.name"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Soledad"], ["last_name", "Schaefer"], ["email", "magdalena.heaney@dubuquehermann.name"], ["street_address", "8004 Jordane Mountains"], ["city", "Hirthebury"], ["state", "WI"], ["zip_code", 56236], ["password_digest", "$2a$10$PF4/FzkO8nCX.8XJtEbCguBzQd.wXDW0SiCSX.hz2A8sJNxzQncBK"], ["created_at", "2017-11-13 22:30:24.691377"], ["updated_at", "2017-11-13 22:30:24.691377"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "jayda.kutch@stoltenberg.net"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Regan"], ["last_name", "Schaden"], ["email", "jayda.kutch@stoltenberg.net"], ["street_address", "36413 Odell Ridge"], ["city", "New Florenceburgh"], ["state", "PA"], ["zip_code", 11723], ["password_digest", "$2a$10$3XC5qzX2/PprIpBHPHqyVe84rVrNeOnd76GLyzxrn3uRa4Z5M4zLa"], ["created_at", "2017-11-13 22:30:24.769576"], ["updated_at", "2017-11-13 22:30:24.769576"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "marielle@haag.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Ubaldo"], ["last_name", "Ferry"], ["email", "marielle@haag.io"], ["street_address", "262 Verda Harbors"], ["city", "Port Cotyton"], ["state", "IN"], ["zip_code", 63553], ["password_digest", "$2a$10$oI31bGTGkcx.PD8qPDLvZuw3xjcqlQ27JRF4bXIalIeZ/ffwfm0JK"], ["created_at", "2017-11-13 22:30:24.859953"], ["updated_at", "2017-11-13 22:30:24.859953"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "efrain_adams@green.net"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Lennie"], ["last_name", "Kertzmann"], ["email", "efrain_adams@green.net"], ["street_address", "7500 Hoeger Trafficway"], ["city", "West Alfonsoport"], ["state", "OH"], ["zip_code", 91210], ["password_digest", "$2a$10$aVyaKmH5rYjP2VY6e5fJQ.bTJmQ6pPo2lahtJ77G8/ZfWpyWPJPN."], ["created_at", "2017-11-13 22:30:24.936982"], ["updated_at", "2017-11-13 22:30:24.936982"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "wellington_lehner@walsh.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Angie"], ["last_name", "Kub"], ["email", "wellington_lehner@walsh.biz"], ["street_address", "62451 Rau Village"], ["city", "Rebekahview"], ["state", "MT"], ["zip_code", 19433], ["password_digest", "$2a$10$uH54qpz89WiMfk3Yk4ee4uhM.ZTYpye8qJobKvM49My8REDplr0hS"], ["created_at", "2017-11-13 22:30:25.020764"], ["updated_at", "2017-11-13 22:30:25.020764"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "dorothea_mayert@gibsonkris.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Nathen"], ["last_name", "Boyer"], ["email", "dorothea_mayert@gibsonkris.io"], ["street_address", "5400 Raymundo Alley"], ["city", "North Rashadville"], ["state", "NM"], ["zip_code", 67545], ["password_digest", "$2a$10$ms73IT56.9wQtx7.tdosA.PkMxT4cz9W/w6HPTcrKA7jQsvjldWLm"], ["created_at", "2017-11-13 22:30:25.098248"], ["updated_at", "2017-11-13 22:30:25.098248"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "johnpaul.carter@kochreilly.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Carol"], ["last_name", "Paucek"], ["email", "johnpaul.carter@kochreilly.io"], ["street_address", "973 Reinger Rue"], ["city", "West Eino"], ["state", "ND"], ["zip_code", 38078], ["password_digest", "$2a$10$c1Hb/LWMxxbWKlbkhSLGTOHbPHBdPgChIszHiZRkJERQrtCxtEM7O"], ["created_at", "2017-11-13 22:30:25.177607"], ["updated_at", "2017-11-13 22:30:25.177607"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "guido_beatty@fahey.info"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Maxwell"], ["last_name", "Anderson"], ["email", "guido_beatty@fahey.info"], ["street_address", "3224 Bailey Common"], ["city", "West Kamronberg"], ["state", "SD"], ["zip_code", 85832], ["password_digest", "$2a$10$ukb0mE79yIwFEUcAoY2xD.EfG3/Gs49EjIFs0iVEDBnyksEhEPz0e"], ["created_at", "2017-11-13 22:30:25.258565"], ["updated_at", "2017-11-13 22:30:25.258565"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "deontae_turcotte@stammhauck.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Omari"], ["last_name", "McGlynn"], ["email", "deontae_turcotte@stammhauck.biz"], ["street_address", "983 Keshaun Fort"], ["city", "Wunschbury"], ["state", "OH"], ["zip_code", 61690], ["password_digest", "$2a$10$brgeGI379R3NC3T89j6rbOkFdBP.9RapzQ6T8AF2.xs5Vpr2oCSXG"], ["created_at", "2017-11-13 22:30:25.342521"], ["updated_at", "2017-11-13 22:30:25.342521"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "dorthy.davis@klockopollich.net"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Chet"], ["last_name", "Schmeler"], ["email", "dorthy.davis@klockopollich.net"], ["street_address", "8883 Marks Orchard"], ["city", "West Berryview"], ["state", "MS"], ["zip_code", 39176], ["password_digest", "$2a$10$O.3rF4VgVTonSPpyFY8xYus2LcDe1whibb9I6QipQgNz.nKruKv1y"], ["created_at", "2017-11-13 22:30:25.419953"], ["updated_at", "2017-11-13 22:30:25.419953"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "carter_glover@mosciski.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Sarah"], ["last_name", "Altenwerth"], ["email", "carter_glover@mosciski.biz"], ["street_address", "151 Harvey Walk"], ["city", "East Juliuston"], ["state", "VT"], ["zip_code", 72469], ["password_digest", "$2a$10$PMFvzF2WhvJG0MTp0rhcEeYreRdSbARO6CZDE7ZEbq8SQdIkWXjWy"], ["created_at", "2017-11-13 22:30:25.497378"], ["updated_at", "2017-11-13 22:30:25.497378"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "nova@schaden.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Trudie"], ["last_name", "Willms"], ["email", "nova@schaden.com"], ["street_address", "132 Davon Estate"], ["city", "Port Hal"], ["state", "ID"], ["zip_code", 29558], ["password_digest", "$2a$10$tykSHH1JcV5FCgUZqxPosun8u7QCSYAY16ai6Bd8GUHp5y1sPZ36y"], ["created_at", "2017-11-13 22:30:25.579146"], ["updated_at", "2017-11-13 22:30:25.579146"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donors" WHERE "donors"."email" = $1 LIMIT $2[0m  [["email", "colby_murray@rogahnyost.name"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donors" ("first_name", "last_name", "email", "street_address", "city", "state", "zip_code", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Emmett"], ["last_name", "Erdman"], ["email", "colby_murray@rogahnyost.name"], ["street_address", "9783 Stephanie Courts"], ["city", "Beierberg"], ["state", "MD"], ["zip_code", 72636], ["password_digest", "$2a$10$Z524A2pG2e5XbItr6yD1sOsfwUVMOUL0/lFM41FLGPIWe2dxHTMC6"], ["created_at", "2017-11-13 22:30:25.663381"], ["updated_at", "2017-11-13 22:30:25.663381"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Health"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Health"], ["created_at", "2017-11-13 22:30:25.676820"], ["updated_at", "2017-11-13 22:30:25.676820"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Social"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Social"], ["created_at", "2017-11-13 22:30:25.682972"], ["updated_at", "2017-11-13 22:30:25.682972"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Environment"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Environment"], ["created_at", "2017-11-13 22:30:25.688079"], ["updated_at", "2017-11-13 22:30:25.688079"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Education"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Education"], ["created_at", "2017-11-13 22:30:25.693344"], ["updated_at", "2017-11-13 22:30:25.693344"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."category_name" = $1 LIMIT $2[0m  [["category_name", "Natural Distaster"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category_name", "Natural Distaster"], ["created_at", "2017-11-13 22:30:25.701803"], ["updated_at", "2017-11-13 22:30:25.701803"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rodrigo@kunze.org"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Gottlieb, Bergstrom and Rolfson"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Gottlieb, Bergstrom and Rolfson"], ["tax_code", 92], ["email", "rodrigo@kunze.org"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["mission_statement", "content-based"], ["password_digest", "$2a$10$fIp02lgcxV08q4Yu8IspvOIj9gF7ZWMe9uQFijs73LP5HY8OuqhJW"], ["category_id", 2], ["created_at", "2017-11-13 22:30:25.825579"], ["updated_at", "2017-11-13 22:30:25.825579"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "liana@schultz.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Fisher Inc"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Fisher Inc"], ["tax_code", 60], ["email", "liana@schultz.com"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["mission_statement", "bi-directional"], ["password_digest", "$2a$10$FBwdB7roxmofALhtOm8j5.I02i8CwS5.uXlPW/fr8Dy35HT/WqHD6"], ["category_id", 4], ["created_at", "2017-11-13 22:30:25.918489"], ["updated_at", "2017-11-13 22:30:25.918489"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "cortez_lang@schmitt.biz"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Rowe-Roberts"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Rowe-Roberts"], ["tax_code", 35], ["email", "cortez_lang@schmitt.biz"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["mission_statement", "empowering"], ["password_digest", "$2a$10$2kgYd02ymGZdYVW3zUXJqet44DJaGeq/maYT7we1bXLXuDnKlLLq."], ["category_id", 3], ["created_at", "2017-11-13 22:30:26.006648"], ["updated_at", "2017-11-13 22:30:26.006648"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "mikayla_franecki@johnston.org"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Bartell, Nikolaus and Abbott"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Bartell, Nikolaus and Abbott"], ["tax_code", 78], ["email", "mikayla_franecki@johnston.org"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["mission_statement", "Cross-platform"], ["password_digest", "$2a$10$M7KVKkWvtbKi//zUwl9sJuHxZGtoc.FU/ryBtfckH2U0wcgmPIfjK"], ["category_id", 2], ["created_at", "2017-11-13 22:30:26.085334"], ["updated_at", "2017-11-13 22:30:26.085334"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "jeanie@quitzon.co"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Metz-Walsh"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Metz-Walsh"], ["tax_code", 75], ["email", "jeanie@quitzon.co"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/5.png"], ["mission_statement", "grid-enabled"], ["password_digest", "$2a$10$tex3NtFY6PDMfaYaGArW5.m9LkKQsk7jsrifZmF5J.RQ2pwlzNRpW"], ["category_id", 3], ["created_at", "2017-11-13 22:30:26.176785"], ["updated_at", "2017-11-13 22:30:26.176785"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "irwin_stamm@moriette.biz"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Hagenes-Gerhold"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Hagenes-Gerhold"], ["tax_code", 8], ["email", "irwin_stamm@moriette.biz"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/2.png"], ["mission_statement", "homogeneous"], ["password_digest", "$2a$10$2hDBw88PfqJ4DxIjOPqBXu92nQfRy2GGQxfXz8xvt2s1gHQlIzeuy"], ["category_id", 5], ["created_at", "2017-11-13 22:30:26.269610"], ["updated_at", "2017-11-13 22:30:26.269610"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "hugh_hayes@swaniawskikertzmann.net"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Zemlak-Bartoletti"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Zemlak-Bartoletti"], ["tax_code", 53], ["email", "hugh_hayes@swaniawskikertzmann.net"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/8.png"], ["mission_statement", "firmware"], ["password_digest", "$2a$10$w98pzpvn2wWIeiVqqzptOuUNvR75.t1jMVJGqCIyPg/qAf881X76."], ["category_id", 1], ["created_at", "2017-11-13 22:30:26.351391"], ["updated_at", "2017-11-13 22:30:26.351391"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "rita@hammes.info"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "McKenzie-Koch"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "McKenzie-Koch"], ["tax_code", 95], ["email", "rita@hammes.info"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/3.png"], ["mission_statement", "access"], ["password_digest", "$2a$10$xKIQUCYS0UghKVjG3edloeOtDTpGsb80ca7PH1EMr7g77KC1LXfke"], ["category_id", 4], ["created_at", "2017-11-13 22:30:26.430999"], ["updated_at", "2017-11-13 22:30:26.430999"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "kendrick@jerde.io"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Bradtke Group"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Bradtke Group"], ["tax_code", 78], ["email", "kendrick@jerde.io"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/9.png"], ["mission_statement", "matrices"], ["password_digest", "$2a$10$D3.2oBLVPQSkIiGKRvFNlOfGGKXBib1ihBspk2xThWBm9LIG9XT0y"], ["category_id", 1], ["created_at", "2017-11-13 22:30:26.515743"], ["updated_at", "2017-11-13 22:30:26.515743"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."email" = $1 LIMIT $2[0m  [["email", "sophie.schinner@feilruel.io"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."organization_name" = $1 LIMIT $2[0m  [["organization_name", "Tillman, Hodkiewicz and Nader"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("organization_name", "tax_code", "email", "url", "mission_statement", "password_digest", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["organization_name", "Tillman, Hodkiewicz and Nader"], ["tax_code", 13], ["email", "sophie.schinner@feilruel.io"], ["url", "https://pigment.github.io/fake-logos/logos/medium/color/13.png"], ["mission_statement", "client-server"], ["password_digest", "$2a$10$PUFNoBjFToXE43VJLYRcqujxVAmPVHdq.BwNBrN1zy.l1QAq3MEZu"], ["category_id", 5], ["created_at", "2017-11-13 22:30:26.602282"], ["updated_at", "2017-11-13 22:30:26.602282"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Sindhian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Sindhian"], ["created_at", "2017-11-13 22:30:26.626567"], ["updated_at", "2017-11-13 22:30:26.626567"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Irish"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Irish"], ["created_at", "2017-11-13 22:30:26.633006"], ["updated_at", "2017-11-13 22:30:26.633006"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Tanzanian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Tanzanian"], ["created_at", "2017-11-13 22:30:26.638674"], ["updated_at", "2017-11-13 22:30:26.638674"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Andorran"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Andorran"], ["created_at", "2017-11-13 22:30:26.643706"], ["updated_at", "2017-11-13 22:30:26.643706"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Fijian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Fijian"], ["created_at", "2017-11-13 22:30:26.649216"], ["updated_at", "2017-11-13 22:30:26.649216"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "East Timorese"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "East Timorese"], ["created_at", "2017-11-13 22:30:26.654458"], ["updated_at", "2017-11-13 22:30:26.654458"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Moldovan"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Moldovan"], ["created_at", "2017-11-13 22:30:26.659235"], ["updated_at", "2017-11-13 22:30:26.659235"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Palestinian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Palestinian"], ["created_at", "2017-11-13 22:30:26.664322"], ["updated_at", "2017-11-13 22:30:26.664322"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Hong Konger"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Hong Konger"], ["created_at", "2017-11-13 22:30:26.669897"], ["updated_at", "2017-11-13 22:30:26.669897"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "events" WHERE "events"."event_name" = $1 LIMIT $2[0m  [["event_name", "Georgian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["event_name", "Georgian"], ["created_at", "2017-11-13 22:30:26.675269"], ["updated_at", "2017-11-13 22:30:26.675269"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Banking"], ["street_address", "7267 Koss Hills"], ["city", "East Eino"], ["state", "AR"], ["zip_code", 94133], ["description", "Sunt accusamus cum sed perspiciatis. Voluptas sunt ullam fugit. Non consectetur aliquid quis dolorem rerum deserunt. A perspiciatis perferendis accusantium iure reprehenderit ut. Voluptatibus aut tempore facilis."], ["organization_id", 1], ["event_id", 7], ["created_at", "2017-11-13 22:30:26.730171"], ["updated_at", "2017-11-13 22:30:26.730171"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Construction"], ["street_address", "896 Adams Drives"], ["city", "South Derickstad"], ["state", "MO"], ["zip_code", 93616], ["description", "Sint dolores similique et odio recusandae voluptas nesciunt. Expedita enim excepturi deserunt molestiae iste aut aut. Placeat nulla libero aut nihil odio doloribus. Necessitatibus suscipit deleniti aut asperiores."], ["organization_id", 2], ["event_id", 6], ["created_at", "2017-11-13 22:30:26.744958"], ["updated_at", "2017-11-13 22:30:26.744958"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Marketing"], ["street_address", "558 Nova Inlet"], ["city", "East Roxane"], ["state", "ME"], ["zip_code", 55709], ["description", "Voluptatem sint error et. Rerum quia accusantium est natus. Nam explicabo velit et quos qui. Vitae sed doloribus voluptatem eos saepe ad et. Recusandae facilis voluptas reprehenderit iste animi."], ["organization_id", 3], ["event_id", 10], ["created_at", "2017-11-13 22:30:26.757338"], ["updated_at", "2017-11-13 22:30:26.757338"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Hospitality"], ["street_address", "56488 Funk Lodge"], ["city", "Jameyburgh"], ["state", "MT"], ["zip_code", 54250], ["description", "Repudiandae odit placeat et. Magnam perspiciatis aperiam doloremque. Autem voluptates non aut similique."], ["organization_id", 4], ["event_id", 5], ["created_at", "2017-11-13 22:30:26.764038"], ["updated_at", "2017-11-13 22:30:26.764038"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Consulting"], ["street_address", "901 Trevion Hollow"], ["city", "Coltview"], ["state", "NY"], ["zip_code", 88653], ["description", "Aut repellat modi. Exercitationem in voluptatem et velit ut veritatis. Voluptas omnis fugit rem enim fugiat. Provident sed beatae saepe maiores sed. Voluptatem commodi non consequatur et minus."], ["organization_id", 5], ["event_id", 6], ["created_at", "2017-11-13 22:30:26.771859"], ["updated_at", "2017-11-13 22:30:26.771859"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Accounting"], ["street_address", "75270 Jerad Roads"], ["city", "Lake Paulport"], ["state", "MT"], ["zip_code", 23549], ["description", "Est excepturi sit tempore cum veritatis exercitationem doloremque. Harum quo aut sit ab. Eius rerum quaerat eum qui est eum. Autem quisquam quia distinctio ea nam quod."], ["organization_id", 6], ["event_id", 3], ["created_at", "2017-11-13 22:30:26.778706"], ["updated_at", "2017-11-13 22:30:26.778706"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Mining"], ["street_address", "50150 Scotty Turnpike"], ["city", "East Jaida"], ["state", "ND"], ["zip_code", 76916], ["description", "Modi dolores eos magni. Rerum ipsum sit. Natus tempore temporibus voluptas rerum. Incidunt minima hic quia at blanditiis asperiores qui."], ["organization_id", 7], ["event_id", 9], ["created_at", "2017-11-13 22:30:26.786989"], ["updated_at", "2017-11-13 22:30:26.786989"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Administration"], ["street_address", "79853 Hilpert Villages"], ["city", "Douglasmouth"], ["state", "KY"], ["zip_code", 48172], ["description", "Quam velit sed impedit maiores quia hic. Vel perspiciatis libero. Autem libero doloremque ipsam porro officiis pariatur omnis. Unde laborum eius vitae."], ["organization_id", 8], ["event_id", 3], ["created_at", "2017-11-13 22:30:26.793940"], ["updated_at", "2017-11-13 22:30:26.793940"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Administration"], ["street_address", "693 German Locks"], ["city", "Frankieland"], ["state", "FL"], ["zip_code", 94172], ["description", "Nemo quibusdam quis reiciendis fugit rerum. Saepe dolorem est similique nobis magni. Porro labore sint ut illum enim sit quis."], ["organization_id", 9], ["event_id", 7], ["created_at", "2017-11-13 22:30:26.804492"], ["updated_at", "2017-11-13 22:30:26.804492"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "street_address", "city", "state", "zip_code", "description", "organization_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["project_name", "Sales"], ["street_address", "33987 Jeromy Ford"], ["city", "North Amina"], ["state", "NV"], ["zip_code", 22848], ["description", "Quia eos consequuntur vero. Eligendi sunt architecto distinctio ut. Ut assumenda ex itaque id rerum optio sit. Excepturi aut reiciendis adipisci."], ["organization_id", 10], ["event_id", 8], ["created_at", "2017-11-13 22:30:26.811456"], ["updated_at", "2017-11-13 22:30:26.811456"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonationType Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Medicine"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Medicine"], ["created_at", "2017-11-13 22:30:26.825114"], ["updated_at", "2017-11-13 22:30:26.825114"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "advil"], ["donation_type_id", 1], ["created_at", "2017-11-13 22:30:26.838797"], ["updated_at", "2017-11-13 22:30:26.838797"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "tylenol"], ["donation_type_id", 1], ["created_at", "2017-11-13 22:30:26.843572"], ["updated_at", "2017-11-13 22:30:26.843572"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "antibiotics"], ["donation_type_id", 1], ["created_at", "2017-11-13 22:30:26.848179"], ["updated_at", "2017-11-13 22:30:26.848179"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "bandages"], ["donation_type_id", 1], ["created_at", "2017-11-13 22:30:26.853005"], ["updated_at", "2017-11-13 22:30:26.853005"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonationType Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Food"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Food"], ["created_at", "2017-11-13 22:30:26.858975"], ["updated_at", "2017-11-13 22:30:26.858975"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Water"], ["donation_type_id", 2], ["created_at", "2017-11-13 22:30:26.864294"], ["updated_at", "2017-11-13 22:30:26.864294"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Canned Goods"], ["donation_type_id", 2], ["created_at", "2017-11-13 22:30:26.869420"], ["updated_at", "2017-11-13 22:30:26.869420"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Dog Food"], ["donation_type_id", 2], ["created_at", "2017-11-13 22:30:26.873763"], ["updated_at", "2017-11-13 22:30:26.873763"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Baby Food"], ["donation_type_id", 2], ["created_at", "2017-11-13 22:30:26.878141"], ["updated_at", "2017-11-13 22:30:26.878141"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonationType Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Volunteer"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Volunteer"], ["created_at", "2017-11-13 22:30:26.883323"], ["updated_at", "2017-11-13 22:30:26.883323"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Medicine"], ["donation_type_id", 3], ["created_at", "2017-11-13 22:30:26.888499"], ["updated_at", "2017-11-13 22:30:26.888499"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Rescue"], ["donation_type_id", 3], ["created_at", "2017-11-13 22:30:26.893160"], ["updated_at", "2017-11-13 22:30:26.893160"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Teach"], ["donation_type_id", 3], ["created_at", "2017-11-13 22:30:26.897530"], ["updated_at", "2017-11-13 22:30:26.897530"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonationType Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Money"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Money"], ["created_at", "2017-11-13 22:30:26.902924"], ["updated_at", "2017-11-13 22:30:26.902924"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Money"], ["donation_type_id", 4], ["created_at", "2017-11-13 22:30:26.907434"], ["updated_at", "2017-11-13 22:30:26.907434"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDonationType Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "donation_types" WHERE "donation_types"."type_name" = $1 LIMIT $2[0m  [["type_name", "Household"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donation_types" ("type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["type_name", "Household"], ["created_at", "2017-11-13 22:30:26.912730"], ["updated_at", "2017-11-13 22:30:26.912730"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Soap"], ["donation_type_id", 5], ["created_at", "2017-11-13 22:30:26.917235"], ["updated_at", "2017-11-13 22:30:26.917235"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Shampoo"], ["donation_type_id", 5], ["created_at", "2017-11-13 22:30:26.922076"], ["updated_at", "2017-11-13 22:30:26.922076"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Toothpaste"], ["donation_type_id", 5], ["created_at", "2017-11-13 22:30:26.926696"], ["updated_at", "2017-11-13 22:30:26.926696"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("item_name", "donation_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_name", "Detergent"], ["donation_type_id", 5], ["created_at", "2017-11-13 22:30:26.931014"], ["updated_at", "2017-11-13 22:30:26.931014"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 12], ["project_id", 1], ["quantity_requested", 675], ["created_at", "2017-11-13 22:30:26.948492"], ["updated_at", "2017-11-13 22:30:26.948492"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 11], ["project_id", 2], ["quantity_requested", 657], ["created_at", "2017-11-13 22:30:26.954775"], ["updated_at", "2017-11-13 22:30:26.954775"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 6], ["project_id", 3], ["quantity_requested", 992], ["created_at", "2017-11-13 22:30:26.960664"], ["updated_at", "2017-11-13 22:30:26.960664"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 8], ["project_id", 4], ["quantity_requested", 745], ["created_at", "2017-11-13 22:30:26.966443"], ["updated_at", "2017-11-13 22:30:26.966443"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 9], ["project_id", 5], ["quantity_requested", 543], ["created_at", "2017-11-13 22:30:26.972205"], ["updated_at", "2017-11-13 22:30:26.972205"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 12], ["project_id", 6], ["quantity_requested", 642], ["created_at", "2017-11-13 22:30:26.978988"], ["updated_at", "2017-11-13 22:30:26.978988"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 1], ["project_id", 7], ["quantity_requested", 996], ["created_at", "2017-11-13 22:30:26.988650"], ["updated_at", "2017-11-13 22:30:26.988650"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 11], ["project_id", 8], ["quantity_requested", 700], ["created_at", "2017-11-13 22:30:26.995153"], ["updated_at", "2017-11-13 22:30:26.995153"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 7], ["project_id", 9], ["quantity_requested", 953], ["created_at", "2017-11-13 22:30:27.002240"], ["updated_at", "2017-11-13 22:30:27.002240"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 16], ["project_id", 10], ["quantity_requested", 741], ["created_at", "2017-11-13 22:30:27.007766"], ["updated_at", "2017-11-13 22:30:27.007766"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 2], ["project_id", 1], ["quantity_requested", 888], ["created_at", "2017-11-13 22:30:27.014531"], ["updated_at", "2017-11-13 22:30:27.014531"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 11], ["project_id", 2], ["quantity_requested", 747], ["created_at", "2017-11-13 22:30:27.020830"], ["updated_at", "2017-11-13 22:30:27.020830"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 12], ["project_id", 3], ["quantity_requested", 187], ["created_at", "2017-11-13 22:30:27.027390"], ["updated_at", "2017-11-13 22:30:27.027390"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 8], ["project_id", 4], ["quantity_requested", 422], ["created_at", "2017-11-13 22:30:27.033917"], ["updated_at", "2017-11-13 22:30:27.033917"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 3], ["project_id", 5], ["quantity_requested", 5], ["created_at", "2017-11-13 22:30:27.040421"], ["updated_at", "2017-11-13 22:30:27.040421"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 9], ["project_id", 6], ["quantity_requested", 585], ["created_at", "2017-11-13 22:30:27.045834"], ["updated_at", "2017-11-13 22:30:27.045834"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 1], ["project_id", 7], ["quantity_requested", 657], ["created_at", "2017-11-13 22:30:27.053431"], ["updated_at", "2017-11-13 22:30:27.053431"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 7], ["project_id", 8], ["quantity_requested", 28], ["created_at", "2017-11-13 22:30:27.060942"], ["updated_at", "2017-11-13 22:30:27.060942"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 4], ["project_id", 9], ["quantity_requested", 907], ["created_at", "2017-11-13 22:30:27.067266"], ["updated_at", "2017-11-13 22:30:27.067266"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 11], ["project_id", 10], ["quantity_requested", 403], ["created_at", "2017-11-13 22:30:27.072952"], ["updated_at", "2017-11-13 22:30:27.072952"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 7], ["project_id", 1], ["quantity_requested", 910], ["created_at", "2017-11-13 22:30:27.079126"], ["updated_at", "2017-11-13 22:30:27.079126"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 9], ["project_id", 2], ["quantity_requested", 369], ["created_at", "2017-11-13 22:30:27.085136"], ["updated_at", "2017-11-13 22:30:27.085136"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 6], ["project_id", 3], ["quantity_requested", 130], ["created_at", "2017-11-13 22:30:27.091235"], ["updated_at", "2017-11-13 22:30:27.091235"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 8], ["project_id", 4], ["quantity_requested", 865], ["created_at", "2017-11-13 22:30:27.100946"], ["updated_at", "2017-11-13 22:30:27.100946"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 5], ["project_id", 5], ["quantity_requested", 39], ["created_at", "2017-11-13 22:30:27.108922"], ["updated_at", "2017-11-13 22:30:27.108922"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 10], ["project_id", 6], ["quantity_requested", 753], ["created_at", "2017-11-13 22:30:27.115327"], ["updated_at", "2017-11-13 22:30:27.115327"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 15], ["project_id", 7], ["quantity_requested", 109], ["created_at", "2017-11-13 22:30:27.121146"], ["updated_at", "2017-11-13 22:30:27.121146"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 5], ["project_id", 8], ["quantity_requested", 601], ["created_at", "2017-11-13 22:30:27.126766"], ["updated_at", "2017-11-13 22:30:27.126766"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 15], ["project_id", 9], ["quantity_requested", 848], ["created_at", "2017-11-13 22:30:27.132450"], ["updated_at", "2017-11-13 22:30:27.132450"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("item_id", "project_id", "quantity_requested", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 7], ["project_id", 10], ["quantity_requested", 669], ["created_at", "2017-11-13 22:30:27.138763"], ["updated_at", "2017-11-13 22:30:27.138763"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/projects" for ::1 at 2017-11-13 14:31:04 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 14:31:04 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 56ms (Views: 24.7ms | ActiveRecord: 14.9ms)
+
+
+Completed 200 OK in 56ms (Views: 22.0ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 14:37:32 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 14:37:32 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 30ms (Views: 16.1ms | ActiveRecord: 12.8ms)
+
+
+  [1m[36mOrganization Load (2.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 43ms (Views: 18.0ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-13 17:21:18 -0800
+Started GET "/projects" for ::1 at 2017-11-13 17:21:18 -0800
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mOrganization Load (3.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mProject Load (13.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 119ms (Views: 22.8ms | ActiveRecord: 34.1ms)
+
+
+Completed 200 OK in 120ms (Views: 45.7ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 17:24:00 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 17:24:00 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mOrganization Load (3.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 28ms (Views: 18.8ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 17:47:53 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 17:48:03 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 23ms (Views: 13.7ms | ActiveRecord: 3.4ms)
+
+
+Processing by OrganizationsController#index as HTML
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 32ms (Views: 15.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-13 18:07:31 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/projects" for ::1 at 2017-11-13 18:07:31 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mOrganization Load (2.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 45ms (Views: 27.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:07:50 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:07:50 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/project_filter" for ::1 at 2017-11-13 18:07:50 -0800
+  
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mProject Load (3.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 3.5ms)
+
+
+  [1m[36mOrganization Load (9.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 49ms (Views: 39.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:11:04 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/project_filter" for ::1 at 2017-11-13 18:11:04 -0800
+  [1m[36mProject Load (3.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 82ms (Views: 62.9ms | ActiveRecord: 3.1ms)
+
+
+  
+Started GET "/organizations" for ::1 at 2017-11-13 18:11:04 -0800
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by OrganizationsController#index as HTML
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 54ms (Views: 25.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:11:12 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:11:12 -0800
+Started GET "/project_filter" for ::1 at 2017-11-13 18:11:12 -0800
+Processing by OrganizationsController#index as HTML
+  
+  [1m[36mProject Load (3.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mOrganization Load (25.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 34ms (Views: 8.2ms | ActiveRecord: 25.7ms)
+
+
+Completed 200 OK in 255ms (Views: 21.1ms | ActiveRecord: 227.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:12:40 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:12:40 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/project_filter" for ::1 at 2017-11-13 18:12:40 -0800
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mOrganization Load (4.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+ActionController::RoutingError (uninitialized constant ProjectController):
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 4.9ms)
+
+
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/filters" for ::1 at 2017-11-13 18:15:25 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:15:25 -0800
+Started GET "/projects" for ::1 at 2017-11-13 18:15:25 -0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[35m (38.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrganizationsController#index as HTML
+  [1m[35m (52.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProject Load (13.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  
+  [1m[36mOrganization Load (2.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 200 OK in 104ms (Views: 26.5ms | ActiveRecord: 53.5ms)
+
+
+Completed 200 OK in 96ms (Views: 23.1ms | ActiveRecord: 62.1ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:15:28 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:15:28 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:15:28 -0800
+  
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mProject Load (2.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (3.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 268ms (Views: 39.5ms | ActiveRecord: 228.3ms)
+
+
+Completed 200 OK in 270ms (Views: 42.3ms | ActiveRecord: 227.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:16:18 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:16:18 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/projects" for ::1 at 2017-11-13 18:16:28 -0800
+Started GET "/filters" for ::1 at 2017-11-13 18:16:28 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:16:28 -0800
+  [1m[36mProject Load (2.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 41ms (Views: 18.7ms | ActiveRecord: 16.2ms)
+
+
+Completed 200 OK in 51ms (Views: 20.7ms | ActiveRecord: 21.0ms)
+
+
+Processing by ProjectsController#index as HTML
+  
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:16:28 -0800
+  [1m[36mProject Load (3.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  
+ActionController::RoutingError (uninitialized constant ProjectController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 200 OK in 191ms (Views: 17.8ms | ActiveRecord: 24.7ms)
+
+
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 237ms (Views: 28.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:17:59 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:17:59 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:17:59 -0800
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 99ms (Views: 38.9ms | ActiveRecord: 21.0ms)
+
+
+Completed 200 OK in 127ms (Views: 31.3ms | ActiveRecord: 75.1ms)
+
+
+Processing by ProjectsController#filter as HTML
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f95a0e6d330>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Started GET "/projects" for ::1 at 2017-11-13 18:18:59 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:18:59 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:18:59 -0800
+Processing by ProjectsController#filter as HTML
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f95a04cbc28>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (17.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 52ms (Views: 29.1ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 559ms (Views: 32.7ms | ActiveRecord: 49.0ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-13 18:19:13 -0800
+Started GET "/filters" for ::1 at 2017-11-13 18:19:13 -0800
+Started GET "/projects" for ::1 at 2017-11-13 18:19:13 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#filter as HTML
+  [1m[35m (121.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (122.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.0ms)
+
+
+Processing by ProjectsController#index as HTML
+  
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f93e254b668>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (22.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (1.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 55ms (Views: 19.2ms | ActiveRecord: 14.9ms)
+
+
+Completed 200 OK in 325ms (Views: 28.5ms | ActiveRecord: 55.6ms)
+
+
+Started GET "/filters" for ::1 at 2017-11-13 18:20:18 -0800
+Processing by ProjectsController#filter as HTML
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f93df234b58>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Started GET "/filters" for ::1 at 2017-11-13 18:20:45 -0800
+Started GET "/filters" for ::1 at 2017-11-13 18:20:55 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mDonationType Load (1.0ms)[0m  [1m[34mSELECT  "donation_types".* FROM "donation_types" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 75ms (Views: 5.6ms | ActiveRecord: 14.3ms)
+
+
+Processing by ProjectsController#filter as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT  "donation_types".* FROM "donation_types" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 44ms (Views: 5.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:21:08 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:21:08 -0800
+Started GET "/filters" for ::1 at 2017-11-13 18:21:08 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by OrganizationsController#index as HTML
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mDonationType Load (17.9ms)[0m  [1m[34mSELECT  "donation_types".* FROM "donation_types" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 200 OK in 79ms (Views: 34.9ms | ActiveRecord: 35.6ms)
+
+
+  [1m[36mEvent Load (45.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (2.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mOrganization Load (59.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mEvent Load (71.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 166ms (Views: 11.5ms | ActiveRecord: 141.0ms)
+
+
+Completed 200 OK in 197ms (Views: 35.1ms | ActiveRecord: 144.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:28:08 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:28:09 -0800
+  [1m[36mProject Load (22.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 138ms (Views: 72.7ms | ActiveRecord: 49.0ms)
+
+
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:28:09 -0800
+Processing by ProjectsController#filter as HTML
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mOrganization Load (94.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 183ms (Views: 61.1ms | ActiveRecord: 94.6ms)
+
+
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f93df42b948>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Started GET "/filters" for ::1 at 2017-11-13 18:28:18 -0800
+Processing by ProjectsController#filter as HTML
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `filters' for #<ProjectsController:0x007f93e0b34860>
+Did you mean?  filter
+               @filters):
+  
+app/controllers/projects_controller.rb:73:in `filter'
+Started GET "/filters" for ::1 at 2017-11-13 18:28:32 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `<<' for nil:NilClass):
+  
+app/controllers/projects_controller.rb:78:in `block in filter'
+app/controllers/projects_controller.rb:77:in `filter'
+Started GET "/filters" for ::1 at 2017-11-13 18:28:46 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:31:16 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:31:16 -0800
+Started GET "/filters" for ::1 at 2017-11-13 18:31:16 -0800
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 55ms (Views: 38.9ms | ActiveRecord: 1.2ms)
+
+
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 44ms (Views: 20.8ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 86ms (Views: 0.3ms | ActiveRecord: 34.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:31:28 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:31:28 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:31:28 -0800
+  [1m[36mProject Load (2.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mCategory Load (3.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+Completed 200 OK in 50ms (Views: 27.0ms | ActiveRecord: 16.0ms)
+
+
+  [1m[36mEvent Load (24.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 40ms (Views: 0.4ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:31:53 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 18:31:53 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:31:53 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (8.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 18ms (Views: 9.5ms | ActiveRecord: 8.4ms)
+
+
+  [1m[36mOrganization Load (6.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 6.0ms)
+
+
+  [1m[36mDonationType Load (6.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 18:43:49 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 18:43:49 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 18:43:49 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (2.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mCategory Load (4.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.6ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 22:35:55 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 22:35:55 -0800
+Started GET "/filters" for ::1 at 2017-11-13 22:35:55 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mOrganization Load (4.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (5.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 22:40:20 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 22:40:20 -0800
+Started GET "/filters" for ::1 at 2017-11-13 22:40:20 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mCategory Load (5.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/projects/2" for ::1 at 2017-11-13 22:40:43 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 121ms (Views: 0.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 22:40:48 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 22:40:48 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 22:40:48 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mOrganization Load (3.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mCategory Load (4.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 22:48:30 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 22:48:30 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 22:48:30 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mOrganization Load (1.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mDonationType Load (1.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/1" for ::1 at 2017-11-13 22:49:05 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:07:21 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 23:07:21 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 23:07:21 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 2.6ms)
+
+
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mCategory Load (5.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:07:54 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 23:07:54 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started GET "/organizations" for ::1 at 2017-11-13 23:07:54 -0800
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 2.1ms)
+
+
+Processing by OrganizationsController#index as HTML
+  [1m[36mCategory Load (5.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mEvent Load (4.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:08:23 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 23:08:23 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 23:08:23 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (3.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 3.8ms)
+
+
+  [1m[36mDonationType Load (4.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:08:28 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 23:08:28 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 23:08:28 -0800
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 2.4ms)
+
+
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (2.2ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:08:59 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 23:08:59 -0800
+Started GET "/filters" for ::1 at 2017-11-13 23:08:59 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mOrganization Load (4.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mCategory Load (6.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:13:33 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-13 23:13:33 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (2.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started GET "/filters" for ::1 at 2017-11-13 23:13:33 -0800
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 2.8ms)
+
+
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (5.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 5.4ms)
+
+
+  [1m[36mCategory Load (5.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-13 23:13:55 -0800
+Started GET "/projects" for ::1 at 2017-11-13 23:13:55 -0800
+Started GET "/filters" for ::1 at 2017-11-13 23:13:55 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mProject Load (3.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mDonationType Load (1.2ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 3.9ms)
+
+
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-13 23:14:08 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-13 23:14:08 -0800
+Started GET "/organizations" for ::1 at 2017-11-13 23:14:08 -0800
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mOrganization Load (4.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mDonationType Load (4.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/filters" for ::1 at 2017-11-14 08:55:51 -0800
+Started GET "/projects" for ::1 at 2017-11-14 08:55:51 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 08:55:51 -0800
+Processing by ProjectsController#filter as HTML
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mCategory Load (68.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProject Load (81.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+Completed 200 OK in 165ms (Views: 82.0ms | ActiveRecord: 81.3ms)
+
+
+  [1m[36mEvent Load (229.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 416ms (Views: 0.5ms | ActiveRecord: 298.1ms)
+
+
+  [1m[36mOrganization Load (338.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 409ms (Views: 68.7ms | ActiveRecord: 338.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:55:53 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 08:55:53 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 08:55:53 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mOrganization Load (10.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (9.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 24ms (Views: 12.9ms | ActiveRecord: 10.8ms)
+
+
+  [1m[36mDonationType Load (1.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 29ms (Views: 1.1ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:56:11 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 08:56:11 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 08:56:11 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mCategory Load (11.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (13.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 25ms (Views: 11.2ms | ActiveRecord: 13.6ms)
+
+
+  [1m[36mDonationType Load (10.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:56:13 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 08:56:13 -0800
+Started GET "/filters" for ::1 at 2017-11-14 08:56:13 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mCategory Load (6.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:56:32 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 08:56:32 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 08:56:32 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (3.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mCategory Load (3.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (4.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 4.9ms)
+
+
+  [1m[36mDonationType Load (8.9ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (10.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 33ms (Views: 0.5ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:58:41 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 08:58:41 -0800
+Started GET "/filters" for ::1 at 2017-11-14 08:58:41 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mOrganization Load (8.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 8.0ms)
+
+
+  [1m[36mDonationType Load (0.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 23ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 08:59:17 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 08:59:17 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 08:59:17 -0800
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mCategory Load (5.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (5.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 5.5ms)
+
+
+  [1m[36mDonationType Load (8.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (4.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:00:12 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 09:00:12 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 09:00:12 -0800
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (4.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 4.4ms)
+
+
+  [1m[36mCategory Load (5.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (6.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 6.6ms)
+
+
+  [1m[36mDonationType Load (10.1ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 29ms (Views: 0.6ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:00:15 -0800
+Started GET "/filters" for ::1 at 2017-11-14 09:00:15 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 09:00:15 -0800
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mCategory Load (6.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (7.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 7.4ms)
+
+
+  [1m[36mDonationType Load (4.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:00:27 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 09:00:27 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 09:00:27 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mOrganization Load (7.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 7.6ms)
+
+
+  [1m[36mCategory Load (12.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:00:39 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 09:00:39 -0800
+Started GET "/filters" for ::1 at 2017-11-14 09:00:39 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mOrganization Load (1.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:53:49 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 09:53:49 -0800
+Started GET "/filters" for ::1 at 2017-11-14 09:53:49 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mOrganization Load (4.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (3.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 09:57:19 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 09:57:19 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 09:57:19 -0800
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (3.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mOrganization Load (4.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (5.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mDonationType Load (0.6ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:01:18 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:01:18 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:01:18 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mCategory Load (5.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:02:39 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:02:39 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:02:39 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (4.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mCategory Load (7.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (1.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:02:57 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:02:57 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:02:57 -0800
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 3.3ms)
+
+
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (1.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:03:15 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:03:15 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:03:15 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mOrganization Load (1.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mCategory Load (6.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.9ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:03:49 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:03:49 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:03:49 -0800
+  [1m[36mProject Load (2.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:04:24 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:04:24 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:04:24 -0800
+  [1m[36mProject Load (5.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 5.3ms)
+
+
+  [1m[36mOrganization Load (5.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 5.2ms)
+
+
+  [1m[36mCategory Load (6.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:05:28 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 10:05:28 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:05:28 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (3.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (3.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mCategory Load (5.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 3.3ms)
+
+
+  [1m[36mDonationType Load (1.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:05:47 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:05:47 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:05:47 -0800
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mOrganization Load (3.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 3.2ms)
+
+
+  [1m[36mCategory Load (4.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (1.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:06:08 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:06:08 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:06:08 -0800
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (7.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.7ms)
+
+
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 7.3ms)
+
+
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (1.1ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:06:45 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:06:45 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:06:45 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.3ms)
+
+
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (6.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 6.3ms)
+
+
+  [1m[36mDonationType Load (6.4ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 20ms (Views: 0.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:07:12 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:07:12 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:07:12 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (4.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mDonationType Load (4.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-14 10:10:30 -0800
+Started GET "/projects" for ::1 at 2017-11-14 10:10:30 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:10:30 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (2.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 2.3ms)
+
+
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mCategory Load (10.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:10:44 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:10:44 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:10:44 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mOrganization Load (4.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/1" for ::1 at 2017-11-14 10:10:51 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Load (1.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:10:53 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:10:53 -0800
+Processing by ProjectsController#filter as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:10:53 -0800
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by OrganizationsController#index as HTML
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mDonationType Load (7.1ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 8.9ms)
+
+
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:12:31 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:12:31 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 10:12:31 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by OrganizationsController#index as HTML
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mDonationType Load (4.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:14:10 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:14:10 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 10:14:10 -0800
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Processing by OrganizationsController#index as HTML
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mDonationType Load (4.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:15:20 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:15:20 -0800
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:15:20 -0800
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.9ms)
+
+
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (1.1ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:15:54 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:15:54 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:15:54 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (2.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mCategory Load (4.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (5.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 5.7ms)
+
+
+  [1m[36mDonationType Load (5.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:18:46 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:18:46 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:18:46 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (4.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mDonationType Load (4.8ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:19:05 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:19:05 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:19:05 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mOrganization Load (1.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mCategory Load (4.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:21:01 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 10:21:01 -0800
+Processing by ProjectsController#index as HTML
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:21:01 -0800
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.5ms)
+
+
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mCategory Load (4.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (2.6ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:22:34 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:22:34 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:22:34 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mOrganization Load (5.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 5.5ms)
+
+
+  [1m[36mDonationType Load (4.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:23:26 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:23:26 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:23:26 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mOrganization Load (5.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 5.1ms)
+
+
+  [1m[36mDonationType Load (5.3ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:24:50 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:24:50 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:24:50 -0800
+  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mOrganization Load (3.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 3.8ms)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations" for ::1 at 2017-11-14 10:25:27 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/projects" for ::1 at 2017-11-14 10:25:27 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:25:27 -0800
+Processing by ProjectsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mProject Load (4.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 4.3ms)
+
+
+  [1m[36mCategory Load (9.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.7ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:26:36 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:26:36 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:26:36 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mOrganization Load (3.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+  [1m[36mCategory Load (4.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 3.9ms)
+
+
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:29:26 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:29:26 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (4.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started GET "/filters" for ::1 at 2017-11-14 10:29:26 -0800
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 4.0ms)
+
+
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.5ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:30:51 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:30:51 -0800
+Started GET "/filters" for ::1 at 2017-11-14 10:30:51 -0800
+Processing by OrganizationsController#index as HTML
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mCategory Load (5.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.6ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:32:19 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/organizations" for ::1 at 2017-11-14 10:32:19 -0800
+Processing by OrganizationsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:32:19 -0800
+  [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Processing by ProjectsController#filter as HTML
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 2.7ms)
+
+
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (0.6ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/projects" for ::1 at 2017-11-14 10:35:52 -0800
+Started GET "/organizations" for ::1 at 2017-11-14 10:35:52 -0800
+Processing by ProjectsController#index as HTML
+Started GET "/filters" for ::1 at 2017-11-14 10:35:52 -0800
+Processing by OrganizationsController#index as HTML
+Processing by ProjectsController#filter as HTML
+  [1m[36mProject Load (3.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mOrganization Load (10.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC[0m
+Completed 200 OK in 24ms (Views: 12.6ms | ActiveRecord: 10.4ms)
+
+
+  [1m[36mCategory Load (10.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mDonationType Load (14.0ms)[0m  [1m[34mSELECT "donation_types".* FROM "donation_types"[0m
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."created_at" DESC LIMIT $1[0m  [["LIMIT", 20]]
+Completed 200 OK in 42ms (Views: 0.5ms | ActiveRecord: 25.4ms)
+
+
