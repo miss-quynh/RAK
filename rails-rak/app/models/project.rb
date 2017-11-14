@@ -20,4 +20,20 @@ class Project < ApplicationRecord
     donations
   end
 
+  def closest_projects(donor_zipcode)
+    projects_in_radius = []
+
+    @projects = project.all
+    @project_zipcodes = ZipcodeReturner.closest_zipcodes(project_params[:donor_zipcode])
+
+    @projects.each do |project|
+      @project_zipcodes.each do |zip|
+        if project.zip_code == zip
+          projects_in_radius << project
+        end
+      end
+    end
+    projects_in_radius
+  end
+
 end
