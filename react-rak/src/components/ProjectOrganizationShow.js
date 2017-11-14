@@ -27,12 +27,6 @@ class ProjectOrganizationShow extends React.Component {
     })
   }
 
-  addNewItem() {
-    <button onClick={this.props.toggleProjectFormState}>
-      Request New Donation
-    </button>
-  }
-
   render() {
     return (
       <div className="project-organization-container">
@@ -42,8 +36,15 @@ class ProjectOrganizationShow extends React.Component {
             <Item itemInfo={item}/>
           )}
         </div>
+
+        <div className="donations-list">
+          <button onClick={this.props.toggleProjectFormState}>
+            Request New Donation
+          </button>
+        </div>
       </div>
     );
   }
 }
+
 export default ProjectOrganizationShow;
