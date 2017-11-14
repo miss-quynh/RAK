@@ -78,7 +78,7 @@ class NewProjectForm extends React.Component {
       }
       if(this.state.formSubmitted === true) {
         return (
-          <Redirect to={`/projects/${this.state.newProjectForm.id}`} />
+          <Redirect to={`/organizations/${this.props.organizationId}/projects/${this.state.newProjectForm.id}`} />
         )
       }
   }
